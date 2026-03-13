@@ -3,7 +3,7 @@
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/EasyStat)](https://CRAN.R-project.org/package=EasyStat)
-[![R-CMD-check](https://github.com/EasyStat/EasyStat/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EasyStat/EasyStat/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/itsmdivakaran/EasyStat/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/itsmdivakaran/EasyStat/actions/workflows/R-CMD-check.yaml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![pkgdown](https://img.shields.io/badge/docs-pkgdown-blue)](https://EasyStat.github.io/EasyStat/)
 <!-- badges: end -->
@@ -30,7 +30,7 @@ install.packages("EasyStat")
 
 # Development version from GitHub
 # install.packages("devtools")
-devtools::install_github("EasyStat/EasyStat")
+devtools::install_github("itsmdivakaran/EasyStat")
 
 # From local source
 install.packages("path/to/EasyStat", repos = NULL, type = "source")
@@ -147,7 +147,7 @@ If you use EasyStat in your research, please cite:
 > Divakaran M., Singh G., & Shreedharan J. (2026). *EasyStat: Automated
 > Statistical Analysis, Visualization and Multi-Format Narrative Reporting
 > in R* (Version 2.0.0). Amity University Lucknow & Gulf Medical University.
-> <https://github.com/EasyStat/EasyStat>
+> <https://itsmdivakaran.github.io/Easystat/index.html>
 
 ---
 

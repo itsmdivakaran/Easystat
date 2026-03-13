@@ -49,5 +49,5 @@ Suggests:
     scales (>= 1.2.0),
     rmarkdown (>= 2.0)
 VignetteBuilder: knitr
-URL: https://github.com/EasyStat/EasyStat
-BugReports: https://github.com/EasyStat/EasyStat/issues
+URL: https://github.com/itsmdivakaran/EasyStat
+BugReports: https://github.com/itsmdivakaran/EasyStat/issues

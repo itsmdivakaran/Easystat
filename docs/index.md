@@ -1,4 +1,7 @@
-# EasyStat
+# MIT 0a9 2026 EasyStat Authors. See [LICENSE](https://EasyStat.github.io/EasyStat/LICENSE) for details.
+
+\<\<\<\<\<\<\< HEAD \# EasyStat ![EasyStat
+logo](reference/figures/logo.svg)
 
 **Automated Statistical Analysis, Visualization, and Multi-Format
 Narrative Reporting in R**
@@ -33,7 +36,7 @@ install.packages("EasyStat")
 
 # Development version from GitHub
 # install.packages("devtools")
-devtools::install_github("EasyStat/EasyStat")
+devtools::install_github("itsmdivakaran/EasyStat")
 
 # From local source
 install.packages("path/to/EasyStat", repos = NULL, type = "source")
@@ -151,11 +154,13 @@ If you use EasyStat in your research, please cite:
 > Divakaran M., Singh G., & Shreedharan J. (2026). *EasyStat: Automated
 > Statistical Analysis, Visualization and Multi-Format Narrative
 > Reporting in R* (Version 2.0.0). Amity University Lucknow & Gulf
-> Medical University. <https://github.com/EasyStat/EasyStat>
+> Medical University.
+> <https://itsmdivakaran.github.io/Easystat/index.html>
 
 ------------------------------------------------------------------------
 
 ## License
 
-MIT 0a9 2026 EasyStat Authors. See
-[LICENSE](https://EasyStat.github.io/EasyStat/LICENSE) for details.
+# Easystat
+
+> > > > > > > d4ca618a4a9a9eac7a1d157ce7b46df34e598e08

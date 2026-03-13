@@ -43,9 +43,9 @@ University Lucknow), Jayadevan Shreedharan (Gulf Medical University)
 
 Useful links:
 
-- <https://github.com/EasyStat/EasyStat>
+- <https://github.com/itsmdivakaran/EasyStat>
 
-- Report bugs at <https://github.com/EasyStat/EasyStat/issues>
+- Report bugs at <https://github.com/itsmdivakaran/EasyStat/issues>
 
 ## Author
 
