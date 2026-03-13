@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # EasyStat <img src="man/figures/logo.svg" align="right" height="139" alt="EasyStat logo"/>
 
 <!-- badges: start -->
@@ -153,3 +154,6 @@ If you use EasyStat in your research, please cite:
 ## License
 
 MIT \u00a9 2026 EasyStat Authors. See [LICENSE](LICENSE) for details.
+=======
+# Easystat
+>>>>>>> d4ca618a4a9a9eac7a1d157ce7b46df34e598e08
