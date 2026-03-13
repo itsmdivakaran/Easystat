@@ -1,0 +1,104 @@
+url: https://EasyStat.github.io/EasyStat/
+
+template:
+  bootstrap: 5
+  bootswatch: flatly
+  bslib:
+    primary: "#2E5FA3"
+    secondary: "#E84C4C"
+    success: "#4CC9A4"
+    font-size-base: "1rem"
+    headings-font-weight: "700"
+
+navbar:
+  title: "EasyStat"
+  logo:
+    image: man/figures/logo.svg
+    alt: "EasyStat logo"
+  bg: primary
+  type: dark
+  left:
+    - text: "Get Started"
+      href: articles/EasyStat.html
+    - text: "Reference"
+      href: reference/index.html
+    - text: "News"
+      href: news/index.html
+  right:
+    - icon: fab fa-github
+      href: https://github.com/EasyStat/EasyStat
+      aria-label: "GitHub repository"
+
+home:
+  title: "EasyStat — Automated Statistical Analysis & Narrative Reporting"
+  description: >
+    A comprehensive R package for automated statistical analysis, rich
+    visualization, and multi-format narrative reporting. One function call
+    produces results, plain-language interpretation, and publication-ready
+    Word export.
+  links:
+    - text: "Browse source on GitHub"
+      href: https://github.com/EasyStat/EasyStat
+    - text: "Report a bug"
+      href: https://github.com/EasyStat/EasyStat/issues
+
+reference:
+  - title: "Descriptive Statistics"
+    desc: "Summarize numeric variables with comprehensive statistics and group comparisons."
+    contents:
+      - easy_describe
+      - easy_group_summary
+
+  - title: "Inferential Tests"
+    desc: "Core statistical tests with automated plain-language narrative output."
+    contents:
+      - easy_regression
+      - easy_ttest
+      - easy_anova
+      - easy_chisq
+      - easy_ztest
+      - easy_ftest
+      - easy_correlation
+
+  - title: "Visualization"
+    desc: "Publication-ready ggplot2 plots with built-in interpretation summaries."
+    contents:
+      - easy_histogram
+      - easy_boxplot
+      - easy_scatter
+      - easy_barplot
+      - easy_qqplot
+      - easy_density
+      - easy_correlation_heatmap
+      - easy_autoplot
+
+  - title: "Theme"
+    desc: "Consistent visual identity for all EasyStat plots."
+    contents:
+      - theme_easystat
+
+  - title: "Reporting & Export"
+    desc: "Export results to Microsoft Word with formatted tables and narratives."
+    contents:
+      - export_to_word
+
+  - title: "S3 Methods"
+    desc: "Print and summarize easystat_result objects."
+    contents:
+      - print.easystat_result
+      - summary.easystat_result
+
+  - title: "Package"
+    contents:
+      - EasyStat-package
+
+articles:
+  - title: "Getting Started"
+    navbar: "Getting Started"
+    contents:
+      - EasyStat
+
+footer:
+  structure:
+    left: developed_by
+    right: built_with

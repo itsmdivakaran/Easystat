@@ -1,0 +1,210 @@
+---
+title: "Getting Started with EasyStat"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started with EasyStat}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse  = TRUE,
+  comment   = "#>",
+  fig.width = 7,
+  fig.height = 4.5,
+  out.width = "100%"
+)
+library(EasyStat)
+```
+
+## Overview
+
+**EasyStat** implements a four-step pipeline that transforms raw data into
+publication-ready statistical output with a single function call:
+
+1. **Core Statistical Engine** — wraps base-R `stats` functions (`lm`,
+   `t.test`, `aov`, etc.)
+2. **Metric Extractor** — uses `broom::tidy()` / `broom::glance()` to
+   extract key values (p-value, effect size, CIs, df)
+3. **Narrative Generator Module** — applies conditional logic to produce a
+   statistically sound, plain-language interpretation
+4. **Unified Result Object** — returns an `easystat_result` S3 object that
+   prints as HTML in RStudio Viewer or as ASCII in the console, and can be
+   exported to Word
+
+---
+
+## Descriptive Statistics
+
+### Single variable
+
+```{r describe-single}
+result <- easy_describe(mtcars$mpg)
+print(result, viewer = FALSE)
+```
+
+### Multiple variables from a data frame
+
+```{r describe-multi}
+result <- easy_describe(mtcars, vars = c("mpg", "hp", "wt"))
+print(result, viewer = FALSE)
+```
+
+### Group summaries
+
+```{r group-summary}
+result <- easy_group_summary(mpg ~ cyl, data = mtcars)
+print(result, viewer = FALSE)
+```
+
+---
+
+## Inferential Tests
+
+### Linear Regression
+
+```{r regression}
+result <- easy_regression(mpg ~ wt + hp, data = mtcars)
+print(result, viewer = FALSE)
+```
+
+### Independent Samples t-Test
+
+```{r ttest}
+result <- easy_ttest(mpg ~ am, data = mtcars)
+print(result, viewer = FALSE)
+```
+
+### One-Way ANOVA
+
+```{r anova}
+result <- easy_anova(Sepal.Length ~ Species, data = iris)
+print(result, viewer = FALSE)
+```
+
+### Chi-Square Test of Independence
+
+```{r chisq}
+result <- easy_chisq(~ cyl + am, data = mtcars)
+print(result, viewer = FALSE)
+```
+
+### F-Test for Equality of Variances
+
+```{r ftest}
+result <- easy_ftest(mpg ~ am, data = mtcars)
+print(result, viewer = FALSE)
+```
+
+### Correlation Analysis
+
+```{r correlation}
+result <- easy_correlation(~ mpg + wt, data = mtcars)
+print(result, viewer = FALSE)
+```
+
+#### Pairwise correlation matrix
+
+```{r corr-matrix}
+result <- easy_correlation(mtcars, vars = c("mpg", "hp", "wt", "disp"))
+print(result, viewer = FALSE)
+```
+
+---
+
+## Visualizations
+
+All plot functions return an `easystat_result` object. Access the ggplot2
+object via `result$plot_object` and the plain-language narrative via
+`result$explanation`.
+
+### Histogram
+
+```{r histogram}
+p <- easy_histogram("mpg", data = mtcars)
+p$plot_object
+```
+
+### Grouped Box Plot
+
+```{r boxplot}
+p <- easy_boxplot(Sepal.Length ~ Species, data = iris)
+p$plot_object
+```
+
+### Scatter Plot with Regression Line
+
+```{r scatter}
+p <- easy_scatter(mpg ~ wt, data = mtcars)
+p$plot_object
+```
+
+### Bar Chart (mean +/- SE)
+
+```{r barplot}
+p <- easy_barplot("mpg", data = mtcars, group_by = "cyl", stat = "mean")
+p$plot_object
+```
+
+### Q-Q Plot
+
+```{r qqplot}
+p <- easy_qqplot("mpg", data = mtcars)
+p$plot_object
+```
+
+### Density Plot
+
+```{r density}
+p <- easy_density("Sepal.Length", data = iris, group_by = "Species")
+p$plot_object
+```
+
+### Correlation Heatmap
+
+```{r heatmap}
+p <- easy_correlation_heatmap(mtcars, vars = c("mpg", "hp", "wt", "qsec", "drat"))
+p$plot_object
+```
+
+---
+
+## Export to Microsoft Word
+
+`export_to_word()` creates a formatted `.docx` report with the result
+narrative and tables.
+
+```{r word-export, eval=FALSE}
+reg_result <- easy_regression(mpg ~ wt + hp, data = mtcars)
+
+export_to_word(
+  reg_result,
+  file   = "MyReport.docx",
+  title  = "Fuel Economy Analysis",
+  author = "Mahesh Divakaran, Gunjan Singh, Jayadevan Shreedharan"
+)
+```
+
+---
+
+## The `easystat_result` Object
+
+Every EasyStat function returns a list with class `"easystat_result"`:
+
+| Field | Contents |
+|---|---|
+| `test_type` | Character identifier (e.g. `"regression"`, `"ttest"`) |
+| `formula_str` | Formula or label used |
+| `raw_model` | The underlying R model object (`lm`, `htest`, etc.) |
+| `coefficients_table` | `data.frame` of parameter estimates |
+| `model_fit_table` | `data.frame` of fit / summary statistics |
+| `explanation` | Plain-language narrative string |
+| `plot_object` | ggplot2 object (visualization functions only) |
+
+You can access any field directly:
+
+```{r fields}
+result <- easy_ttest(mpg ~ am, data = mtcars)
+cat(result$explanation)
+```

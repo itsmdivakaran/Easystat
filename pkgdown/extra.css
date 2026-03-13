@@ -1,0 +1,80 @@
+/* EasyStat pkgdown custom styles */
+
+/* ---- Navbar ---- */
+.navbar-brand img {
+  height: 40px;
+  margin-right: 8px;
+}
+
+/* ---- Hero section ---- */
+.page-header {
+  background: linear-gradient(135deg, #1A3A6B 0%, #2E5FA3 60%, #4a7cc7 100%);
+  color: #FFFFFF;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.page-header h1, .page-header p {
+  color: #FFFFFF;
+}
+
+/* ---- Reference index cards ---- */
+.ref-index .section {
+  border-left: 4px solid #2E5FA3;
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ---- Function signature ---- */
+.usage pre {
+  background: #f0f4fb;
+  border-left: 3px solid #2E5FA3;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+/* ---- Examples ---- */
+.examples pre {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+/* ---- News / Changelog ---- */
+.news-version {
+  color: #2E5FA3;
+  font-weight: 700;
+  border-bottom: 2px solid #E84C4C;
+  padding-bottom: 0.25rem;
+}
+
+/* ---- Links ---- */
+a {
+  color: #2E5FA3;
+}
+a:hover {
+  color: #E84C4C;
+  text-decoration: underline;
+}
+
+/* ---- Code inline ---- */
+code {
+  color: #2E5FA3;
+  background-color: #f0f4fb;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+/* ---- Footer ---- */
+footer {
+  background: #1A3A6B;
+  color: #FFFFFF;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: #4CC9A4;
+}
