@@ -15,14 +15,21 @@ Authors@R: c(
            role    = "aut",
            comment = c(Affiliation = "Gulf Medical University"))
     )
+Author: Mahesh Divakaran [aut, cre],
+    Gunjan Singh [aut],
+    Jayadevan Shreedharan [aut]
+Maintainer: Mahesh Divakaran <imaheshdivakaran@gmail.com>
 Description: A comprehensive R package for automated statistical analysis,
     rich visualization, and multi-format narrative reporting. Provides a
     unified pipeline for: descriptive statistics (easy_describe,
     easy_group_summary); inferential tests with plain-language narratives
-    (easy_regression, easy_ttest, easy_anova, easy_chisq, easy_ztest,
-    easy_ftest, easy_correlation); and publication-ready ggplot2 visualizations
+    (easy_regression, easy_logistic_regression, easy_ttest, easy_anova,
+    easy_chisq, easy_ztest, easy_ftest, easy_correlation, easy_wilcox,
+    easy_kruskal); and
+    publication-ready ggplot2 visualizations
     (easy_histogram, easy_boxplot, easy_scatter, easy_barplot, easy_qqplot,
-    easy_density, easy_correlation_heatmap). The core Narrative Generator
+    easy_density, easy_correlation_heatmap, easy_regression_diagnostics,
+    easy_odds_ratio_plot). The core Narrative Generator
     Module applies conditional logic to extracted p-values, effect sizes, and
     model-fit metrics to produce statistically sound, human-readable
     explanations automatically. Results render in the RStudio Viewer (HTML),
@@ -30,6 +37,7 @@ Description: A comprehensive R package for automated statistical analysis,
     and 'officer'.
 License: MIT + file LICENSE
 Encoding: UTF-8
+Language: en-US
 Depends: R (>= 4.1.0)
 RoxygenNote: 7.3.3
 Imports:

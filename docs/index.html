@@ -53,20 +53,22 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9"><p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD # EasyStat <img src="reference/figures/logo.svg" align="right" height="139" alt="EasyStat logo"></p>
+  <main id="main" class="col-md-9"><div class="section level1">
+<div class="page-header">
+<img src="logo.svg" class="logo" alt=""><h1 id="easystat-">EasyStat <a class="anchor" aria-label="anchor" href="#easystat-"></a>
+</h1>
+</div>
 <!-- badges: start -->
 
 <p><strong>Automated Statistical Analysis, Visualization, and Multi-Format Narrative Reporting in R</strong></p>
 <blockquote>
-<p><strong>Authors:</strong> Mr. Mahesh Divakaran &amp; Dr. Gunjan Singh (Amity School of Applied Sciences, Amity University Lucknow) — Prof. Dr. Jayadevan Shreedharan (Gulf Medical University)</p>
+<p><strong>Authors:</strong> Mr. Mahesh Divakaran &amp; Dr. Gunjan Singh (Amity School of Applied Sciences, Amity University Lucknow) - Prof. Dr. Jayadevan Shreedharan (Gulf Medical University)</p>
 </blockquote>
-<hr>
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
-<p>EasyStat bridges the gap between complex statistical output and actionable insight. A single function call delivers three outputs simultaneously: the statistical result, a plain-language narrative interpretation, and publication-ready tables — all rendered automatically in the RStudio Viewer (HTML), the R console (ASCII), or exported directly to Microsoft Word.</p>
-<p>The core innovation is the <strong>Narrative Generator Module</strong>: conditional logic applied to p-values, effect sizes, and model-fit metrics produces statistically sound, human-readable explanations without any manual writing.</p>
-<hr>
+<p>EasyStat bridges the gap between statistical output and actionable insight. A single function call delivers the statistical result, a plain-language narrative interpretation, and publication-ready tables, rendered in the RStudio Viewer, the R console, or Microsoft Word.</p>
+<p>User-facing p-values are reported as percentages rounded to 4 decimal places, while raw model objects still retain the original numeric p-values for advanced use.</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -77,11 +79,10 @@
 <span></span>
 <span><span class="co"># Development version from GitHub</span></span>
 <span><span class="co"># install.packages("devtools")</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"itsmdivakaran/EasyStat"</span><span class="op">)</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/install-deprecated.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"itsmdivakaran/EasyStat"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># From local source</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"path/to/EasyStat"</span>, repos <span class="op">=</span> <span class="cn">NULL</span>, type <span class="op">=</span> <span class="st">"source"</span><span class="op">)</span></span></code></pre></div>
-<hr>
 </div>
 <div class="section level2">
 <h2 id="quick-start">Quick Start<a class="anchor" aria-label="anchor" href="#quick-start"></a>
@@ -92,7 +93,10 @@
 <span><span class="co"># Linear regression with narrative</span></span>
 <span><span class="fu"><a href="reference/easy_regression.html">easy_regression</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">wt</span> <span class="op">+</span> <span class="va">hp</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># t-Test</span></span>
+<span><span class="co"># Logistic regression with odds ratios</span></span>
+<span><span class="fu"><a href="reference/easy_logistic_regression.html">easy_logistic_regression</a></span><span class="op">(</span><span class="va">am</span> <span class="op">~</span> <span class="va">mpg</span> <span class="op">+</span> <span class="va">wt</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># t-test</span></span>
 <span><span class="fu"><a href="reference/easy_ttest.html">easy_ttest</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">am</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># One-way ANOVA</span></span>
@@ -105,10 +109,9 @@
 <span><span class="fu"><a href="reference/easy_correlation_heatmap.html">easy_correlation_heatmap</a></span><span class="op">(</span><span class="va">mtcars</span>, vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mpg"</span>, <span class="st">"hp"</span>, <span class="st">"wt"</span>, <span class="st">"qsec"</span>, <span class="st">"drat"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Export any result to Word</span></span>
-<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/easy_regression.html">easy_regression</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">wt</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span></span>
-<span><span class="fu"><a href="reference/export_to_word.html">export_to_word</a></span><span class="op">(</span><span class="va">result</span>, file <span class="op">=</span> <span class="st">"report.docx"</span>, title <span class="op">=</span> <span class="st">"Fuel Economy Study"</span>,</span>
+<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/easy_logistic_regression.html">easy_logistic_regression</a></span><span class="op">(</span><span class="va">am</span> <span class="op">~</span> <span class="va">mpg</span> <span class="op">+</span> <span class="va">wt</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/export_to_word.html">export_to_word</a></span><span class="op">(</span><span class="va">result</span>, file <span class="op">=</span> <span class="st">"report.docx"</span>, title <span class="op">=</span> <span class="st">"Transmission Model"</span>,</span>
 <span>               author <span class="op">=</span> <span class="st">"Mahesh Divakaran, Gunjan Singh, Jayadevan Shreedharan"</span><span class="op">)</span></span></code></pre></div>
-<hr>
 </div>
 <div class="section level2">
 <h2 id="four-step-pipeline">Four-Step Pipeline<a class="anchor" aria-label="anchor" href="#four-step-pipeline"></a>
@@ -127,30 +130,27 @@
 <tbody>
 <tr>
 <td>1</td>
-<td><strong>Core Statistical Engine</strong></td>
-<td>Wraps <code><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm()</a></code>, <code><a href="https://rdrr.io/r/stats/t.test.html" class="external-link">t.test()</a></code>, <code><a href="https://rdrr.io/r/stats/aov.html" class="external-link">aov()</a></code>, <code><a href="https://rdrr.io/r/stats/chisq.test.html" class="external-link">chisq.test()</a></code>, <code><a href="https://rdrr.io/r/stats/var.test.html" class="external-link">var.test()</a></code>, <code><a href="https://rdrr.io/r/stats/cor.test.html" class="external-link">cor.test()</a></code>
+<td>Core Statistical Engine</td>
+<td>Wraps <code><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm()</a></code>, <code><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm()</a></code>, <code><a href="https://rdrr.io/r/stats/t.test.html" class="external-link">t.test()</a></code>, <code><a href="https://rdrr.io/r/stats/aov.html" class="external-link">aov()</a></code>, <code><a href="https://rdrr.io/r/stats/chisq.test.html" class="external-link">chisq.test()</a></code>, <code><a href="https://rdrr.io/r/stats/var.test.html" class="external-link">var.test()</a></code>, <code><a href="https://rdrr.io/r/stats/cor.test.html" class="external-link">cor.test()</a></code>
 </td>
 </tr>
 <tr>
 <td>2</td>
-<td><strong>Metric Extractor</strong></td>
-<td>Uses <code><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">broom::tidy()</a></code> / <code><a href="https://generics.r-lib.org/reference/glance.html" class="external-link">broom::glance()</a></code> to extract p-values, effect sizes, CIs</td>
+<td>Metric Extractor</td>
+<td>Uses model summaries and <code>broom</code> helpers to extract p-values, effect sizes, CIs, and fit metrics</td>
 </tr>
 <tr>
 <td>3</td>
-<td>
-<strong>Narrative Generator Module</strong> <em>(core invention)</em>
-</td>
+<td>Narrative Generator Module</td>
 <td>Applies conditional logic to produce plain-language explanations</td>
 </tr>
 <tr>
 <td>4</td>
-<td><strong>Unified Result Object</strong></td>
-<td>Returns <code>easystat_result</code> S3 with tables, narrative, and optional plot</td>
+<td>Unified Result Object</td>
+<td>Returns <code>easystat_result</code> S3 objects with tables, narrative, and optional plots</td>
 </tr>
 </tbody>
 </table>
-<hr>
 </div>
 <div class="section level2">
 <h2 id="function-reference">Function Reference<a class="anchor" aria-label="anchor" href="#function-reference"></a>
@@ -180,6 +180,34 @@
 </table>
 </div>
 <div class="section level3">
+<h3 id="regression-models">Regression Models<a class="anchor" aria-label="anchor" href="#regression-models"></a>
+</h3>
+<table class="table">
+<colgroup>
+<col width="34%">
+<col width="24%">
+<col width="41%">
+</colgroup>
+<thead><tr>
+<th>Function</th>
+<th>Model</th>
+<th>Key Output</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code><a href="reference/easy_regression.html">easy_regression()</a></code></td>
+<td>Linear regression</td>
+<td>R-squared, ANOVA table, diagnostics, influential observations</td>
+</tr>
+<tr>
+<td><code><a href="reference/easy_logistic_regression.html">easy_logistic_regression()</a></code></td>
+<td>Binary logistic regression</td>
+<td>Odds ratios, OR CIs, classification table, McFadden pseudo-R2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level3">
 <h3 id="inferential-tests">Inferential Tests<a class="anchor" aria-label="anchor" href="#inferential-tests"></a>
 </h3>
 <table class="table">
@@ -195,11 +223,6 @@
 </tr></thead>
 <tbody>
 <tr>
-<td><code><a href="reference/easy_regression.html">easy_regression()</a></code></td>
-<td>Linear regression (OLS)</td>
-<td>R0b2, adjusted R0b2</td>
-</tr>
-<tr>
 <td><code><a href="reference/easy_ttest.html">easy_ttest()</a></code></td>
 <td>Independent / one-sample t-test</td>
 <td>Cohen’s d</td>
@@ -207,12 +230,12 @@
 <tr>
 <td><code><a href="reference/easy_anova.html">easy_anova()</a></code></td>
 <td>One-way ANOVA with post-hoc context</td>
-<td>3b70b2 (eta-squared)</td>
+<td>eta-squared</td>
 </tr>
 <tr>
 <td><code><a href="reference/easy_chisq.html">easy_chisq()</a></code></td>
-<td>Chi-square independence &amp; GOF</td>
-<td>Cram0e9r’s V</td>
+<td>Chi-square independence and GOF</td>
+<td>Cramer’s V</td>
 </tr>
 <tr>
 <td><code><a href="reference/easy_ztest.html">easy_ztest()</a></code></td>
@@ -226,8 +249,18 @@
 </tr>
 <tr>
 <td><code><a href="reference/easy_correlation.html">easy_correlation()</a></code></td>
-<td>Pearson / Spearman / Kendall correlation &amp; matrix</td>
-<td>r, r0b2</td>
+<td>Pearson / Spearman / Kendall correlation and matrix</td>
+<td>r, r-squared</td>
+</tr>
+<tr>
+<td><code><a href="reference/easy_wilcox.html">easy_wilcox()</a></code></td>
+<td>Wilcoxon rank-sum / signed-rank test</td>
+<td>Median comparison + CI</td>
+</tr>
+<tr>
+<td><code><a href="reference/easy_kruskal.html">easy_kruskal()</a></code></td>
+<td>Kruskal-Wallis test</td>
+<td>Rank-based eta-squared</td>
 </tr>
 </tbody>
 </table>
@@ -255,11 +288,11 @@
 </tr>
 <tr>
 <td><code><a href="reference/easy_scatter.html">easy_scatter()</a></code></td>
-<td>Scatter plot with regression line and R0b2</td>
+<td>Scatter plot with regression line and R-squared</td>
 </tr>
 <tr>
 <td><code><a href="reference/easy_barplot.html">easy_barplot()</a></code></td>
-<td>Count or mean (0b1 SE) bar chart</td>
+<td>Count or mean (+/- SE) bar chart</td>
 </tr>
 <tr>
 <td><code><a href="reference/easy_qqplot.html">easy_qqplot()</a></code></td>
@@ -274,8 +307,16 @@
 <td>Annotated pairwise correlation heatmap</td>
 </tr>
 <tr>
+<td><code><a href="reference/easy_regression_diagnostics.html">easy_regression_diagnostics()</a></code></td>
+<td>Fitted-vs-residuals diagnostic plot</td>
+</tr>
+<tr>
+<td><code><a href="reference/easy_odds_ratio_plot.html">easy_odds_ratio_plot()</a></code></td>
+<td>Logistic regression odds-ratio plot</td>
+</tr>
+<tr>
 <td><code><a href="reference/easy_autoplot.html">easy_autoplot()</a></code></td>
-<td>Smart dispatcher — picks the right plot for a result</td>
+<td>Smart dispatcher that picks the right plot for a result</td>
 </tr>
 </tbody>
 </table>
@@ -284,6 +325,10 @@
 <h3 id="theme--export">Theme &amp; Export<a class="anchor" aria-label="anchor" href="#theme--export"></a>
 </h3>
 <table class="table">
+<colgroup>
+<col width="43%">
+<col width="56%">
+</colgroup>
 <thead><tr>
 <th>Function</th>
 <th>Description</th>
@@ -295,11 +340,10 @@
 </tr>
 <tr>
 <td><code><a href="reference/export_to_word.html">export_to_word()</a></code></td>
-<td>Formatted <code>.docx</code> report (flextable + officer)</td>
+<td>Formatted <code>.docx</code> report with flextable and officer</td>
 </tr>
 </tbody>
 </table>
-<hr>
 </div>
 </div>
 <div class="section level2">
@@ -312,29 +356,26 @@
 </tr></thead>
 <tbody>
 <tr>
-<td><strong>RStudio HTML Viewer</strong></td>
+<td>RStudio HTML Viewer</td>
 <td>Auto-detected in interactive sessions</td>
 </tr>
 <tr>
-<td><strong>Console (ASCII)</strong></td>
+<td>Console</td>
 <td>Scripts, terminals, non-interactive sessions</td>
 </tr>
 <tr>
-<td><strong>Word (.docx)</strong></td>
-<td>
-<code><a href="reference/export_to_word.html">export_to_word()</a></code> — one call, full report</td>
+<td>Word <code>.docx</code>
+</td>
+<td><code><a href="reference/export_to_word.html">export_to_word()</a></code></td>
 </tr>
 </tbody>
 </table>
-<hr>
 </div>
 <div class="section level2">
 <h2 id="running-the-smoke-test">Running the Smoke Test<a class="anchor" aria-label="anchor" href="#running-the-smoke-test"></a>
 </h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/source.html" class="external-link">source</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"smoke_test.R"</span>, package <span class="op">=</span> <span class="st">"EasyStat"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p>Runs 25+ assertions across all analysis, visualization, and export functions.</p>
-<hr>
 </div>
 <div class="section level2">
 <h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
@@ -343,38 +384,13 @@
 <blockquote>
 <p>Divakaran M., Singh G., &amp; Shreedharan J. (2026). <em>EasyStat: Automated Statistical Analysis, Visualization and Multi-Format Narrative Reporting in R</em> (Version 2.0.0). Amity University Lucknow &amp; Gulf Medical University. <a href="https://itsmdivakaran.github.io/Easystat/index.html" class="external-link uri">https://itsmdivakaran.github.io/Easystat/index.html</a></p>
 </blockquote>
-<hr>
 </div>
 <div class="section level2">
 <h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
 </h2>
-</div>
-<div class="section level1">
-<div class="page-header">
-<img src="logo.svg" class="logo" alt=""><h1 id="mit-0a9-2026-easystat-authors-see-license-for-details">MIT 0a9 2026 EasyStat Authors. See <a href="LICENSE">LICENSE</a> for details.<a class="anchor" aria-label="anchor" href="#mit-0a9-2026-easystat-authors-see-license-for-details"></a>
-</h1>
+<p>MIT (c) 2026 EasyStat Authors. See <a href="LICENSE">LICENSE</a> for details.</p>
 </div>
 </div>
-<div class="section level1">
-<h1 id="easystat">Easystat<a class="anchor" aria-label="anchor" href="#easystat"></a>
-</h1>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>d4ca618a4a9a9eac7a1d157ce7b46df34e598e08</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</div>
-
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">

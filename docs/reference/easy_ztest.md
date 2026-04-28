@@ -95,7 +95,7 @@ print(result)
 #> --------------------------------------------------------------------------------
 #>             Metric                 Value
 #>        z-statistic                0.0851
-#>            p-value                0.9322
+#>            p-value              93.2214%
 #>        Alternative             two.sided
 #>          Cohen's d                 0.015
 #>  Effect size class negligible (d < 0.20)
@@ -106,11 +106,11 @@ print(result)
 #> 
 #> Z-TEST Comparison: One-sample test
 #> 
-#> A one-sample z-test found not statistically significant (p = 0.9322) evidence
-#>   that the sample mean (20.0906) differs from the hypothesised population
-#>   mean of 20 (z = 0.085). The standardised effect size (Cohen's d = 0.015) is
-#>   classified as negligible (d < 0.20). The 95% CI for the population mean is
-#>   [18.0024, 22.1788].
+#> A one-sample z-test found not statistically significant (p = 93.2214%)
+#>   evidence that the sample mean (20.0906) differs from the hypothesised
+#>   population mean of 20 (z = 0.085). The standardised effect size (Cohen's d
+#>   = 0.015) is classified as negligible (d < 0.20). The 95% CI for the
+#>   population mean is [18.0024, 22.1788].
 #> 
 #> ================================================================================
 #> 
@@ -142,7 +142,7 @@ print(result)
 #> --------------------------------------------------------------------------------
 #>             Metric            Value
 #>        z-statistic          -3.7671
-#>            p-value        0.0001651
+#>            p-value          0.0165%
 #>        Alternative        two.sided
 #>          Cohen's d          -1.4779
 #>  Effect size class large (d ≥ 0.80)
@@ -153,7 +153,7 @@ print(result)
 #> 
 #> Z-TEST Comparison: mpg ~ am
 #> 
-#> A two-sample z-test revealed a highly statistically significant (p < 0.001)
+#> A two-sample z-test revealed a highly statistically significant (p = 0.0165%)
 #>   difference between the two group means (z = -3.767). Mean₁ = 17.1474, Mean₂
 #>   = 24.3923. The standardised effect size (Cohen's d = 1.4779) is classified
 #>   as large (d ≥ 0.80). The 95% CI for the mean difference is [-11.0143,

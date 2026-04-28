@@ -121,7 +121,7 @@ and pairwise analysis is desired. Default <code>NULL</code> = all numeric cols.<
 <span class="r-out co"><span class="r-pr">#&gt;</span> TABLE 2 — MODEL FIT / SUMMARY</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --------------------------------------------------------------------------------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                Metric            Value</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>               p-value          &lt; 1e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>               p-value         &lt;0.0001%</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Correlation strength           strong</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             Direction         Negative</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     Effect size class large (d ≥ 0.80)</span>
@@ -134,8 +134,8 @@ and pairwise analysis is desired. Default <code>NULL</code> = all numeric cols.<
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> A Pearson correlation analysis revealed a strong negative correlation between</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   the two variables (r = -0.8677), which is highly statistically significant</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (p &lt; 0.001). The coefficient of determination (r² = 0.7528) indicates that</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   approximately 75.3% of the variance in one variable is shared with the</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (p &lt; 0.0001%). The coefficient of determination (r² = 0.7528) indicates</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   that approximately 75.3% of the variance in one variable is shared with the</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   other. The 95% confidence interval for the correlation coefficient is</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [-0.9338, -0.7441]. This strong relationship may have meaningful practical</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   implications and warrants further investigation.</span>
@@ -152,13 +152,13 @@ and pairwise analysis is desired. Default <code>NULL</code> = all numeric cols.<
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> TABLE 1 — MAIN RESULTS</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --------------------------------------------------------------------------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Var1 Var2       r r_squared p_value Strength Direction Sig</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   mpg   hp -0.7762    0.6024 &lt; 1e-04   strong  Negative Yes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   mpg   wt -0.8677    0.7528 &lt; 1e-04   strong  Negative Yes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   mpg disp -0.8476    0.7183 &lt; 1e-04   strong  Negative Yes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    hp   wt  0.6587    0.4339 &lt; 1e-04 moderate  Positive Yes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    hp disp  0.7909    0.6256 &lt; 1e-04   strong  Positive Yes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    wt disp  0.8880    0.7885 &lt; 1e-04   strong  Positive Yes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Var1 Var2       r r_squared  p_value Strength Direction Sig</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   mpg   hp -0.7762    0.6024 &lt;0.0001%   strong  Negative Yes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   mpg   wt -0.8677    0.7528 &lt;0.0001%   strong  Negative Yes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   mpg disp -0.8476    0.7183 &lt;0.0001%   strong  Negative Yes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    hp   wt  0.6587    0.4339  0.0041% moderate  Positive Yes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    hp disp  0.7909    0.6256 &lt;0.0001%   strong  Positive Yes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    wt disp  0.8880    0.7885 &lt;0.0001%   strong  Positive Yes</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> TABLE 2 — MODEL FIT / SUMMARY</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --------------------------------------------------------------------------------</span>

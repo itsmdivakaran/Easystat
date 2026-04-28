@@ -21,7 +21,7 @@ easy_ftest(
 
 \item{data}{A data frame. Required when \code{x} is a formula.}
 
-\item{ratio}{Hypothesised ratio of variances under H0. Default \code{1}.}
+\item{ratio}{Hypothesized ratio of variances under H0. Default \code{1}.}
 
 \item{alternative}{\code{"two.sided"} (default), \code{"less"}, or \code{"greater"}.}
 

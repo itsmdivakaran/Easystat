@@ -18,7 +18,7 @@
 #' @param x Character column name OR a numeric vector.
 #' @param data A data frame (required when \code{x} is a column name).
 #' @param bins Number of histogram bins. Default \code{NULL} (auto).
-#' @param fill_color Bar fill colour. Default EasyStat primary blue.
+#' @param fill_color Bar fill color. Default EasyStat primary blue.
 #' @param show_normal Logical; overlay normal curve? Default \code{TRUE}.
 #' @param title Custom plot title. Default auto-generated.
 #'
@@ -93,7 +93,7 @@ easy_histogram <- function(x, data = NULL, bins = NULL,
     Metric = c("n", "Mean", "Median", "SD", "Skewness", "Kurtosis", "Shapiro-Wilk p"),
     Value  = c(n, round(mn,4), round(med,4), round(s,4),
                round(sk,4), round(kt,4),
-               format.pval(sw_p, digits=4, eps=0.0001)),
+               .format_p_value(sw_p)),
     stringsAsFactors = FALSE
   )
 
@@ -114,7 +114,7 @@ easy_histogram <- function(x, data = NULL, bins = NULL,
 #' @param formula A formula: \code{outcome ~ group} for grouped, or a bare
 #'   column name / numeric vector for a single-variable boxplot.
 #' @param data A data frame.
-#' @param fill_palette Character vector of fill colours. Default EasyStat palette.
+#' @param fill_palette Character vector of fill colors. Default EasyStat palette.
 #' @param notch Logical; draw notched boxes? Default \code{FALSE}.
 #' @param title Custom plot title.
 #'
@@ -214,7 +214,7 @@ easy_boxplot <- function(formula, data, fill_palette = NULL,
 #'
 #' @param formula A formula: \code{y ~ x}.
 #' @param data A data frame.
-#' @param color_by Optional column name to colour points by a third variable.
+#' @param color_by Optional column name to color points by a third variable.
 #' @param smooth Logical; show regression line? Default \code{TRUE}.
 #' @param ellipse Logical; draw a 95\% data ellipse? Default \code{TRUE}.
 #' @param title Custom plot title.
@@ -244,7 +244,7 @@ easy_scatter <- function(formula, data, color_by = NULL,
 
   badge <- .sig_badge(p_val)
   plot_title <- if (is.null(title))
-    paste0(y_var, " \u2014 ", x_var) else title
+    paste0(y_var, " - ", x_var) else title
   subtitle <- glue::glue("r = {r_val}  |  {badge}  |  n = {n}")
 
   aes_base <- if (!is.null(color_by)) {
@@ -280,8 +280,7 @@ easy_scatter <- function(formula, data, color_by = NULL,
                        label = paste0("r = ", r_val, "\n", badge),
                        hjust = 0, vjust = 1, size = 3.2,
                        fill = .ES_COLORS["light_bg"],
-                       color = .ES_COLORS["dark_text"],
-                       label.border = ggplot2::unit(0.3, "lines")) +
+                       color = .ES_COLORS["dark_text"]) +
     ggplot2::labs(title = plot_title, subtitle = subtitle,
                    x = x_var, y = y_var,
                    color = if (!is.null(color_by)) color_by else NULL,
@@ -298,7 +297,7 @@ easy_scatter <- function(formula, data, color_by = NULL,
 
   stats_tbl <- data.frame(
     Metric = c("Pearson r", "p-value", "n", "Slope"),
-    Value  = c(r_val, format.pval(p_val,4,eps=0.0001), n, round(slope,4)),
+    Value  = c(r_val, .format_p_value(p_val), n, round(slope,4)),
     stringsAsFactors = FALSE
   )
   .make_easystat_plot("scatter", gg, interp,
@@ -458,7 +457,7 @@ easy_qqplot <- function(x, data = NULL, title = NULL) {
 
   plot_title <- if (is.null(title)) paste0("Normal Q-Q Plot: ", var_name) else title
   subtitle   <- glue::glue("Shapiro-Wilk: {badge}  |  ",
-    "p = {format.pval(sw_p, digits=4, eps=0.0001)}  |  n = {n}")
+    "{.format_p_statement(sw_p)}  |  n = {n}")
 
   df_qq <- data.frame(v = x_vec)
   gg <- ggplot2::ggplot(df_qq, ggplot2::aes(sample = v)) +
@@ -475,20 +474,19 @@ easy_qqplot <- function(x, data = NULL, title = NULL) {
   gg <- gg +
     ggplot2::annotate("label",
       x = -Inf, y = Inf, hjust = -0.1, vjust = 1.3,
-      label = paste0("SW p = ", format.pval(sw_p, 4, eps = 0.0001),
+      label = paste0("SW ", .format_p_statement(sw_p),
                      "\n", badge),
       fill  = if (!is.na(sw_p) && sw_p < 0.05) "#FDECEA" else "#EBF9EE",
       color = if (!is.na(sw_p) && sw_p < 0.05) .ES_COLORS["sig_red"]
               else .ES_COLORS["sig_green"],
-      size  = 3.2, fontface = "bold",
-      label.border = ggplot2::unit(0.3, "lines")
+      size  = 3.2, fontface = "bold"
     )
 
   metrics  <- list(var_name = var_name, shapiro_p = sw_p)
   interp   <- .generate_qqplot_interpretation(metrics)
   stats_tbl <- data.frame(
     Metric = c("Shapiro-Wilk p", "Verdict", "n"),
-    Value  = c(format.pval(sw_p, 4, eps = 0.0001), badge, n),
+    Value  = c(.format_p_value(sw_p), badge, n),
     stringsAsFactors = FALSE
   )
   .make_easystat_plot("qqplot", gg, interp,
@@ -582,7 +580,7 @@ easy_density <- function(x, data = NULL, group_by = NULL,
 
 #' Correlation Matrix Heatmap
 #'
-#' Computes pairwise correlations and displays them as a colour-coded heatmap,
+#' Computes pairwise correlations and displays them as a color-coded heatmap,
 #' annotating each cell with the correlation coefficient and a significance star.
 #'
 #' @param data A data frame.
@@ -643,7 +641,7 @@ easy_correlation_heatmap <- function(data, vars = NULL,
     ) +
     ggplot2::labs(
       title    = plot_title,
-      subtitle = paste0(n_v, " variables  |  * p<0.05  ** p<0.01  *** p<0.001"),
+      subtitle = paste0(n_v, " variables  |  * p<5.0000%  ** p<1.0000%  *** p<0.1000%"),
       x = NULL, y = NULL,
       caption  = .es_caption("Correlation Heatmap")
     ) +
@@ -662,6 +660,111 @@ easy_correlation_heatmap <- function(data, vars = NULL,
   .make_easystat_plot("correlation_heatmap", gg, interp,
     list(stats_table = corr_result$coefficients_table,
          formula_str = paste("Heatmap:", paste(vars, collapse = ", "))))
+}
+
+
+# ---------------------------------------------------------------------------
+# easy_regression_diagnostics
+# ---------------------------------------------------------------------------
+
+#' Regression Diagnostic Plot
+#'
+#' Creates a fitted-vs-residuals diagnostic figure for linear regression
+#' results returned by \code{\link{easy_regression}}.
+#'
+#' @param result An \code{"easystat_result"} from \code{easy_regression()}.
+#'
+#' @return An \code{"easystat_result"} object with \code{plot_object}.
+#' @export
+easy_regression_diagnostics <- function(result) {
+  if (!inherits(result, "easystat_result") || result$test_type != "regression") {
+    stop("'result' must be an easystat_result from easy_regression().")
+  }
+  model <- result$raw_model
+  diag_df <- data.frame(
+    Fitted = stats::fitted(model),
+    Residual = stats::residuals(model),
+    Std_Residual = stats::rstandard(model),
+    Cook_Distance = stats::cooks.distance(model),
+    stringsAsFactors = FALSE
+  )
+  cook_cut <- 4 / nrow(diag_df)
+  diag_df$Flag <- ifelse(diag_df$Cook_Distance > cook_cut, "High influence", "Typical")
+
+  gg <- ggplot2::ggplot(
+    diag_df,
+    ggplot2::aes(x = .data[["Fitted"]], y = .data[["Residual"]], color = .data[["Flag"]])
+  ) +
+    ggplot2::geom_hline(yintercept = 0, linetype = "dashed", color = "#666666") +
+    ggplot2::geom_point(alpha = 0.8, size = 2.3) +
+    ggplot2::geom_smooth(method = "loess", formula = y ~ x, se = FALSE,
+                         color = .ES_COLORS["secondary"], linewidth = 1) +
+    ggplot2::scale_color_manual(values = c("High influence" = .ES_COLORS["sig_red"],
+                                           "Typical" = .ES_COLORS["primary"])) +
+    ggplot2::labs(
+      title = "Regression Diagnostics",
+      subtitle = paste0("Fitted vs residuals | Cook's D cutoff = ", round(cook_cut, 4)),
+      x = "Fitted values",
+      y = "Residuals",
+      color = NULL,
+      caption = .es_caption("Regression Diagnostics")
+    ) +
+    theme_easystat()
+
+  interp <- glue::glue(
+    "REGRESSION DIAGNOSTIC PLOT\n\n",
+    "The plot shows residuals against fitted values. A roughly random band around zero ",
+    "supports linearity and constant variance. Points flagged as high influence exceed ",
+    "the common Cook's distance cutoff of 4/n."
+  )
+
+  stats_tbl <- data.frame(
+    Metric = c("N", "Cook's D cutoff", "Flagged observations"),
+    Value = c(nrow(diag_df), round(cook_cut, 4), sum(diag_df$Flag == "High influence")),
+    stringsAsFactors = FALSE
+  )
+  .make_easystat_plot("regression_diagnostics", gg, interp,
+                      list(stats_table = stats_tbl, formula_str = result$formula_str))
+}
+
+#' Odds Ratio Plot for Logistic Regression
+#'
+#' Creates a coefficient figure showing odds ratios and confidence intervals
+#' for \code{\link{easy_logistic_regression}} results.
+#'
+#' @param result An \code{"easystat_result"} from \code{easy_logistic_regression()}.
+#'
+#' @return An \code{"easystat_result"} object with \code{plot_object}.
+#' @export
+easy_odds_ratio_plot <- function(result) {
+  if (!inherits(result, "easystat_result") || result$test_type != "logistic_regression") {
+    stop("'result' must be an easystat_result from easy_logistic_regression().")
+  }
+  tbl <- result$coefficients_table
+  tbl <- tbl[tbl$Term != "(Intercept)", , drop = FALSE]
+  if (nrow(tbl) == 0) stop("No predictors available for an odds-ratio plot.")
+  tbl$Term <- factor(tbl$Term, levels = rev(tbl$Term))
+
+  gg <- ggplot2::ggplot(tbl, ggplot2::aes(x = .data[["Odds Ratio"]], y = .data[["Term"]])) +
+    ggplot2::geom_vline(xintercept = 1, linetype = "dashed", color = "#666666") +
+    ggplot2::geom_errorbarh(ggplot2::aes(xmin = .data[["OR CI Lower"]],
+                                         xmax = .data[["OR CI Upper"]]),
+                            height = 0.18, color = .ES_COLORS["primary"]) +
+    ggplot2::geom_point(size = 2.8, color = .ES_COLORS["secondary"]) +
+    ggplot2::scale_x_log10() +
+    ggplot2::labs(
+      title = "Logistic Regression Odds Ratios",
+      subtitle = "Values above 1 indicate higher odds; below 1 indicate lower odds",
+      x = "Odds ratio (log scale)",
+      y = NULL,
+      caption = .es_caption("Odds Ratio Plot")
+    ) +
+    theme_easystat()
+
+  interp <- "ODDS RATIO PLOT\n\nThe plot displays each predictor's odds ratio with its confidence interval. Intervals crossing 1 indicate uncertainty about whether the odds increase or decrease."
+
+  .make_easystat_plot("odds_ratio_plot", gg, interp,
+                      list(stats_table = tbl, formula_str = result$formula_str))
 }
 
 
@@ -691,6 +794,9 @@ easy_autoplot <- function(result, data = NULL, ...) {
       if (is.null(data)) stop("'data' required for autoplot of regression.")
       vars <- all.vars(stats::as.formula(formula_str))
       easy_scatter(stats::as.formula(paste(vars[1], "~", vars[2])), data, ...)
+    },
+    logistic_regression = {
+      easy_odds_ratio_plot(result)
     },
     ttest      = {
       if (is.null(data)) stop("'data' required for autoplot of t-test.")

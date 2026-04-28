@@ -19,6 +19,6 @@ easy_correlation_heatmap(data, vars = NULL, method = "pearson", title = NULL)
 An \code{"easystat_result"} object with \code{plot_object}.
 }
 \description{
-Computes pairwise correlations and displays them as a colour-coded heatmap,
+Computes pairwise correlations and displays them as a color-coded heatmap,
 annotating each cell with the correlation coefficient and a significance star.
 }

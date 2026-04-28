@@ -94,8 +94,8 @@ theme_easystat <- function(base_size = 12, legend_position = "right") {
 # Helper: auto-generate caption with EasyStat branding
 # ---------------------------------------------------------------------------
 .es_caption <- function(test_label = NULL) {
-  base <- "EasyStat \u2022 Automated Statistical Reporting"
-  if (!is.null(test_label)) paste0(base, " \u2022 ", test_label) else base
+  base <- "EasyStat | Automated Statistical Reporting"
+  if (!is.null(test_label)) paste0(base, " | ", test_label) else base
 }
 
 # ---------------------------------------------------------------------------
@@ -103,11 +103,11 @@ theme_easystat <- function(base_size = 12, legend_position = "right") {
 # ---------------------------------------------------------------------------
 .sig_badge <- function(p) {
   if (is.na(p))    return("p = NA")
-  if (p < 0.001)   return("p < 0.001 ***")
-  if (p < 0.01)    return(paste0("p = ", round(p, 4), " **"))
-  if (p < 0.05)    return(paste0("p = ", round(p, 4), " *"))
-  if (p < 0.10)    return(paste0("p = ", round(p, 4), " ."))
-  return(paste0("p = ", round(p, 4), " (ns)"))
+  if (p < 0.001)   return(paste0(.format_p_statement(p), " ***"))
+  if (p < 0.01)    return(paste0(.format_p_statement(p), " **"))
+  if (p < 0.05)    return(paste0(.format_p_statement(p), " *"))
+  if (p < 0.10)    return(paste0(.format_p_statement(p), " ."))
+  paste0(.format_p_statement(p), " (ns)")
 }
 
 # ---------------------------------------------------------------------------

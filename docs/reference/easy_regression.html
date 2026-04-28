@@ -97,10 +97,10 @@ plain-language narrative explanation via the Narrative Generator Module.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> TABLE 1 — MAIN RESULTS</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --------------------------------------------------------------------------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         Term    Estimate Std. Error t Statistic      p-value</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  (Intercept) 37.22727012 1.59878754   23.284689 2.565459e-20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           wt -3.87783074 0.63273349   -6.128695 1.119647e-06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           hp -0.03177295 0.00902971   -3.518712 1.451229e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Term Estimate Std. Error t Statistic  p-value</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  (Intercept)  37.2273     1.5988     23.2847 &lt;0.0001%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           wt  -3.8778     0.6327     -6.1287  0.0001%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           hp  -0.0318     0.0090     -3.5187  0.1451%</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> TABLE 2 — MODEL FIT / SUMMARY</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --------------------------------------------------------------------------------</span>
@@ -110,7 +110,34 @@ plain-language narrative explanation via the Narrative Generator Module.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         F-statistic  69.2112</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>            Model df        2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         Residual df       29</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     Overall p-value  &lt; 1e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     Overall p-value &lt;0.0001%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TABLE 3 — REGRESSION ANOVA TABLE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> --------------------------------------------------------------------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Term Df   Sum_Sq  Mean_Sq  F_value  p_value</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         wt  1 847.7252 847.7252 126.0411 &lt;0.0001%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         hp  1  83.2742  83.2742  12.3813  0.1451%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Residuals 29 195.0478   6.7258       NA       NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TABLE 4 — REGRESSION DIAGNOSTICS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> --------------------------------------------------------------------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                   Metric   Value</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                   N used      32</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                     RMSE  2.4689</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                      MAE  1.9015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              Residual SD  2.5084</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            Mean residual       0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Shapiro-Wilk residual p 3.4275%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Durbin-Watson statistic  1.3624</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> TABLE 5 — INFLUENTIAL OBSERVATIONS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> --------------------------------------------------------------------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Observation Cook_Distance Leverage Std_Residual Influential</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           17      0.423611 0.186487       2.3545         Yes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           31      0.272040 0.394208       1.1199         Yes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           20      0.208393 0.099503       2.3786         Yes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           18      0.157426 0.079910       2.3319         Yes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           28      0.073540 0.153641       1.1024          No</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ================================================================================</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  PLAIN-LANGUAGE INTERPRETATION</span>
@@ -118,18 +145,18 @@ plain-language narrative explanation via the Narrative Generator Module.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> LINEAR REGRESSION ANALYSIS Formula: mpg ~ wt + hp</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> The overall regression model is highly statistically significant (p &lt; 0.001),</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   indicating that the set of 2 predictor(s) collectively explains a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> The overall regression model is highly statistically significant (p &lt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.0001%), indicating that the set of 2 predictor(s) collectively explains a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   meaningful portion of the variance in the outcome variable (F(2, 29) =</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   69.211). The model accounts for 82.7% (large effect) of the total variance</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   in the response variable (Adjusted R² = 81.5%). The intercept is estimated</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   at 37.2273, representing the predicted value of the outcome when all</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   predictors equal zero (highly statistically significant (p &lt; 0.001)). The</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   predictors equal zero (highly statistically significant (p &lt; 0.0001%)). The</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   predictor 'wt' is associated with a decrease of 3.8778 in the outcome for</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   each one-unit increase, and this effect is highly statistically significant</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (p &lt; 0.001). The predictor 'hp' is associated with a decrease of 0.0318 in</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   the outcome for each one-unit increase, and this effect is statistically</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   significant (p = 0.0015). Overall, the model provides statistically</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (p = 0.0001%). The predictor 'hp' is associated with a decrease of 0.0318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   in the outcome for each one-unit increase, and this effect is statistically</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   significant (p = 0.1451%). Overall, the model provides statistically</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   meaningful insight and may be suitable for predictive or inferential</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   purposes.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>

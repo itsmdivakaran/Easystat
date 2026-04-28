@@ -2,13 +2,31 @@
 
 ## New Features
 
+* Added `easy_logistic_regression()` for binary logistic regression with odds
+  ratios, approximate odds-ratio confidence intervals, likelihood-ratio model
+  tests, McFadden pseudo-R2, and automated narrative reporting.
+
+* Added richer supporting tables:
+  - ANOVA now includes group descriptives, assumption checks, and Tukey
+    post-hoc comparisons.
+  - Chi-square tests now include observed contingency tables, expected counts,
+    row percentages, column percentages, and total percentages.
+  - Regression now includes ANOVA, diagnostic, and influential-observation
+    tables.
+
+* Added `easy_wilcox()` and `easy_kruskal()` for common non-parametric
+  workflows.
+
+* Added regression figures: `easy_regression_diagnostics()` and
+  `easy_odds_ratio_plot()`.
+
 * Added comprehensive descriptive statistics: `easy_describe()` and
   `easy_group_summary()` with 21 statistics per variable (mean, median, mode,
   SD, variance, skewness, kurtosis, normality test, CI, and more).
 
 * Extended inferential test suite with four new functions:
   - `easy_chisq()`: Chi-square test of independence and goodness-of-fit,
-    with Cramer's V effect size.
+    with Cramér's V effect size.
   - `easy_ztest()`: One- and two-sample z-tests with Cohen's d.
   - `easy_ftest()`: Levene-style F-test for equality of variances via
     `stats::var.test()`, with variance ratio CI.
@@ -35,6 +53,8 @@
 
 ## Improvements
 
+* User-facing p-values now display as percentages rounded to 4 decimal places
+  across result tables, plot summaries, and narrative text.
 * Narrative Generator Module expanded with 15 conditional narrative templates
   covering all new test and plot types.
 * All functions return a unified `easystat_result` S3 object with consistent

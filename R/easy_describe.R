@@ -160,7 +160,7 @@ easy_describe <- function(data, vars = NULL, digits = 4, conf_level = 0.95) {
       Kurtosis   = round(m$kurtosis, digits),
       CI_lower   = round(m$ci_lower, digits),
       CI_upper   = round(m$ci_upper, digits),
-      Shapiro_p  = format.pval(m$shapiro_p, digits = 4, eps = 0.0001),
+      Shapiro_p  = .format_p_value(m$shapiro_p),
       stringsAsFactors = FALSE
     )
   })
@@ -173,7 +173,7 @@ easy_describe <- function(data, vars = NULL, digits = 4, conf_level = 0.95) {
       Shape       = .skew_label(m$skewness),
       Kurtosis    = .kurt_label(m$kurtosis),
       Normality   = .norm_label(m$shapiro_p),
-      Shapiro_p   = format.pval(m$shapiro_p, digits = 4, eps = 0.0001),
+      Shapiro_p   = .format_p_value(m$shapiro_p),
       stringsAsFactors = FALSE
     )
   })

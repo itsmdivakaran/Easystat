@@ -20,7 +20,7 @@ easy_histogram(
 
 \item{bins}{Number of histogram bins. Default \code{NULL} (auto).}
 
-\item{fill_color}{Bar fill colour. Default EasyStat primary blue.}
+\item{fill_color}{Bar fill color. Default EasyStat primary blue.}
 
 \item{show_normal}{Logical; overlay normal curve? Default \code{TRUE}.}
 

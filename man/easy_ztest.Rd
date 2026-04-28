@@ -25,7 +25,7 @@ for a two-sample test when \code{data} is provided.}
 
 \item{data}{A data frame. Required when \code{x} is a formula.}
 
-\item{mu}{Hypothesised population mean (one-sample) or mean difference
+\item{mu}{Hypothesized population mean (one-sample) or mean difference
 (two-sample). Default \code{0}.}
 
 \item{sigma}{Known population SD for Group 1 (or the single group).

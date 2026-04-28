@@ -67,9 +67,9 @@ print(result)
 #>  96.5000 180.00 335.000 283.000 83.5000 46.7408   0.7994   0.2752 121.9679
 #>   2.5812   3.61   5.424   3.911  1.0288 30.4129   0.4659   0.4166   2.8645
 #>  CI_upper Shapiro_p
-#>   22.2636    0.1229
-#>  171.4071   0.04881
-#>    3.5700   0.09265
+#>   22.2636  12.2881%
+#>  171.4071   4.8808%
+#>    3.5700   9.2655%
 #> 
 #> TABLE 2 — MODEL FIT / SUMMARY
 #> --------------------------------------------------------------------------------
@@ -81,10 +81,10 @@ print(result)
 #>  approximately mesokurtic (similar tail weight to a normal distribution)
 #>  approximately mesokurtic (similar tail weight to a normal distribution)
 #>  approximately mesokurtic (similar tail weight to a normal distribution)
-#>                                       Normality Shapiro_p
-#>  approximately normal (Shapiro-Wilk p = 0.1229)    0.1229
-#>            non-normal (Shapiro-Wilk p = 0.0488)   0.04881
-#>  approximately normal (Shapiro-Wilk p = 0.0927)   0.09265
+#>                                         Normality Shapiro_p
+#>  approximately normal (Shapiro-Wilk p = 12.2881%)  12.2881%
+#>             non-normal (Shapiro-Wilk p = 4.8808%)   4.8808%
+#>   approximately normal (Shapiro-Wilk p = 9.2655%)   9.2655%
 #> 
 #> ================================================================================
 #>  PLAIN-LANGUAGE INTERPRETATION
@@ -98,9 +98,9 @@ print(result)
 #>   IQR = 7.375). The distribution is moderately right-skewed and approximately
 #>   mesokurtic (similar tail weight to a normal distribution). Based on the
 #>   Shapiro-Wilk test, the data are approximately normal (Shapiro-Wilk p =
-#>   0.1229). The coefficient of variation is 30%, indicating moderate relative
-#>   variability. The 95% confidence interval for the population mean is
-#>   [17.9177, 22.2636].
+#>   12.2881%). The coefficient of variation is 30%, indicating moderate
+#>   relative variability. The 95% confidence interval for the population mean
+#>   is [17.9177, 22.2636].
 #> 
 #> ---
 #> 
@@ -111,7 +111,7 @@ print(result)
 #>   standard deviation of 68.5629. Values range from 52 to 335 (range = 283;
 #>   IQR = 83.5). The distribution is moderately right-skewed and approximately
 #>   mesokurtic (similar tail weight to a normal distribution). Based on the
-#>   Shapiro-Wilk test, the data are non-normal (Shapiro-Wilk p = 0.0488). The
+#>   Shapiro-Wilk test, the data are non-normal (Shapiro-Wilk p = 4.8808%). The
 #>   coefficient of variation is 46.7%, indicating high relative variability.
 #>   The 95% confidence interval for the population mean is [121.9679,
 #>   171.4071].
@@ -126,7 +126,7 @@ print(result)
 #>   3.911; IQR = 1.0288). The distribution is approximately symmetric and
 #>   approximately mesokurtic (similar tail weight to a normal distribution).
 #>   Based on the Shapiro-Wilk test, the data are approximately normal
-#>   (Shapiro-Wilk p = 0.0927). The coefficient of variation is 30.4%,
+#>   (Shapiro-Wilk p = 9.2655%). The coefficient of variation is 30.4%,
 #>   indicating high relative variability. The 95% confidence interval for the
 #>   population mean is [2.8645, 3.57].
 #> 

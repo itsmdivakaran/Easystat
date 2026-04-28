@@ -83,10 +83,45 @@ print(result)
 #>                     Metric       Value
 #>  Chi-square statistic (χ²)      8.7407
 #>         Degrees of Freedom           2
-#>                    p-value     0.01265
+#>                    p-value     1.2647%
 #>                  N (total)          32
 #>                 Cramér's V      0.5226
 #>            Effect Strength very strong
+#> 
+#> TABLE 3 — OBSERVED CONTINGENCY TABLE
+#> --------------------------------------------------------------------------------
+#>  Category  0 1
+#>         4  3 8
+#>         6  4 3
+#>         8 12 2
+#> 
+#> TABLE 4 — EXPECTED COUNTS
+#> --------------------------------------------------------------------------------
+#>  Category      0      1
+#>         4 6.5312 4.4688
+#>         6 4.1562 2.8438
+#>         8 8.3125 5.6875
+#> 
+#> TABLE 5 — ROW PERCENTAGES
+#> --------------------------------------------------------------------------------
+#>  Category       0       1
+#>         4 27.2727 72.7273
+#>         6 57.1429 42.8571
+#>         8 85.7143 14.2857
+#> 
+#> TABLE 6 — COLUMN PERCENTAGES
+#> --------------------------------------------------------------------------------
+#>  Category       0       1
+#>         4 15.7895 61.5385
+#>         6 21.0526 23.0769
+#>         8 63.1579 15.3846
+#> 
+#> TABLE 7 — TOTAL PERCENTAGES
+#> --------------------------------------------------------------------------------
+#>  Category      0      1
+#>         4  9.375 25.000
+#>         6 12.500  9.375
+#>         8 37.500  6.250
 #> 
 #> ================================================================================
 #>  PLAIN-LANGUAGE INTERPRETATION
@@ -95,7 +130,7 @@ print(result)
 #> CHI-SQUARE TEST OF INDEPENDENCE
 #> 
 #> A Pearson chi-square test of independence revealed a statistically
-#>   significant (p = 0.0126) association between 'cyl' and 'am' (χ²(2) =
+#>   significant (p = 1.2647%) association between 'cyl' and 'am' (χ²(2) =
 #>   8.741). The effect size, measured by Cramér's V = 0.5226, indicates a very
 #>   strong practical association between the two categorical variables. The
 #>   observed cell frequencies deviate meaningfully from what would be expected
@@ -125,10 +160,17 @@ print(result)
 #>                     Metric    Value
 #>  Chi-square statistic (χ²)   2.3125
 #>         Degrees of Freedom        2
-#>                    p-value   0.3147
+#>                    p-value 31.4664%
 #>                  N (total)       32
 #>                 Cramér's V   0.2688
 #>            Effect Strength moderate
+#> 
+#> TABLE 3 — GOODNESS-OF-FIT TABLE
+#> --------------------------------------------------------------------------------
+#>  Category Observed Expected Percentage
+#>         4       11  10.6667     34.375
+#>         6        7  10.6667     21.875
+#>         8       14  10.6667     43.750
 #> 
 #> ================================================================================
 #>  PLAIN-LANGUAGE INTERPRETATION
@@ -137,7 +179,7 @@ print(result)
 #> CHI-SQUARE GOODNESS-OF-FIT TEST
 #> 
 #> A chi-square goodness-of-fit test for 'cyl' is not statistically significant
-#>   (p = 0.3147) (χ²(2) = 2.312). The observed frequency distribution is
+#>   (p = 31.4664%) (χ²(2) = 2.312). The observed frequency distribution is
 #>   consistent with the expected (theoretical) distribution.
 #> 
 #> ================================================================================

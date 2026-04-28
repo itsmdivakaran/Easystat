@@ -7,8 +7,8 @@
 #' and a footer with metadata. All of this is produced in a single function call.
 #'
 #' @param result An object of class \code{"easystat_result"} as returned by
-#'   \code{\link{easy_regression}}, \code{\link{easy_ttest}}, or
-#'   \code{\link{easy_anova}}.
+#'   \code{\link{easy_regression}}, \code{\link{easy_logistic_regression}},
+#'   \code{\link{easy_ttest}}, or \code{\link{easy_anova}}.
 #' @param file Character string. Path to the output \code{.docx} file.
 #'   Defaults to \code{"EasyStat_Report.docx"} in the current working directory.
 #' @param title Character string. Report title printed at the top of the
@@ -47,9 +47,10 @@ export_to_word <- function(result,
 
   # ---- Auto-title ----
   test_label <- switch(result$test_type,
-    regression = "Linear Regression Analysis",
-    ttest      = "Independent-Samples t-Test",
-    anova      = "One-Way ANOVA",
+    regression          = "Linear Regression Analysis",
+    logistic_regression = "Logistic Regression Analysis",
+    ttest               = "Independent-Samples t-Test",
+    anova               = "One-Way ANOVA",
     "Statistical Analysis"
   )
   if (is.null(title)) title <- paste("EasyStat Report:", test_label)
@@ -115,6 +116,16 @@ export_to_word <- function(result,
   doc <- officer::body_add_par(doc, "Table 2 \u2014 Model Fit / Summary", style = "heading 2")
   doc <- flextable::body_add_flextable(doc, .make_ft(result$model_fit_table))
   doc <- officer::body_add_par(doc, "", style = "Normal")
+
+  if (!is.null(result$additional_tables) && length(result$additional_tables) > 0) {
+    table_no <- 3
+    for (nm in names(result$additional_tables)) {
+      doc <- officer::body_add_par(doc, paste0("Table ", table_no, " \u2014 ", nm), style = "heading 2")
+      doc <- flextable::body_add_flextable(doc, .make_ft(result$additional_tables[[nm]]))
+      doc <- officer::body_add_par(doc, "", style = "Normal")
+      table_no <- table_no + 1
+    }
+  }
 
   # Footer note
   doc <- officer::body_add_par(doc,

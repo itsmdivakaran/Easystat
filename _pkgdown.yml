@@ -49,16 +49,25 @@ reference:
       - easy_describe
       - easy_group_summary
 
+  - title: "Regression Models"
+    desc: "Linear and logistic regression with automated model-fit summaries and narrative interpretation."
+    contents:
+      - easy_regression
+      - easy_logistic_regression
+      - easy_regression_diagnostics
+      - easy_odds_ratio_plot
+
   - title: "Inferential Tests"
     desc: "Core statistical tests with automated plain-language narrative output."
     contents:
-      - easy_regression
       - easy_ttest
       - easy_anova
       - easy_chisq
       - easy_ztest
       - easy_ftest
       - easy_correlation
+      - easy_wilcox
+      - easy_kruskal
 
   - title: "Visualization"
     desc: "Publication-ready ggplot2 plots with built-in interpretation summaries."

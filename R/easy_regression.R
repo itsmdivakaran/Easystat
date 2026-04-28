@@ -37,9 +37,12 @@ easy_regression <- function(formula, data, alpha = 0.05) {
   model <- stats::lm(formula, data = data)
 
   # ---- Step 2: Metric Extractor Module (broom) ----
-  coef_tbl <- broom::tidy(model)
-  coef_tbl <- as.data.frame(coef_tbl)
+  term_df <- broom::tidy(model)
+  coef_tbl <- as.data.frame(term_df)
   colnames(coef_tbl) <- c("Term", "Estimate", "Std. Error", "t Statistic", "p-value")
+  coef_tbl[, c("Estimate", "Std. Error", "t Statistic")] <-
+    lapply(coef_tbl[, c("Estimate", "Std. Error", "t Statistic")], function(v) round(v, 4))
+  coef_tbl[["p-value"]] <- .format_p_value(coef_tbl[["p-value"]])
 
   glance_df  <- broom::glance(model)
   r_sq       <- glance_df$r.squared
@@ -53,12 +56,28 @@ easy_regression <- function(formula, data, alpha = 0.05) {
     Metric  = c("R-squared", "Adjusted R-squared", "F-statistic",
                 "Model df", "Residual df", "Overall p-value"),
     Value   = c(round(r_sq, 6), round(adj_r_sq, 6), round(f_stat, 4),
-                df1, df2, format.pval(p_overall, digits = 4, eps = 0.0001)),
+                df1, df2, .format_p_value(p_overall)),
     stringsAsFactors = FALSE
   )
 
+  anova_tbl <- as.data.frame(stats::anova(model))
+  anova_tbl$Term <- rownames(anova_tbl)
+  rownames(anova_tbl) <- NULL
+  anova_tbl <- data.frame(
+    Term = anova_tbl$Term,
+    Df = anova_tbl$Df,
+    Sum_Sq = round(anova_tbl$`Sum Sq`, 4),
+    Mean_Sq = round(anova_tbl$`Mean Sq`, 4),
+    F_value = round(anova_tbl$`F value`, 4),
+    p_value = .format_p_value(anova_tbl$`Pr(>F)`),
+    stringsAsFactors = FALSE
+  )
+  additional_tables <- c(
+    list("Regression ANOVA Table" = anova_tbl),
+    .model_diagnostic_tables(model)
+  )
+
   # Metrics bundle fed to Narrative Generator
-  term_df <- broom::tidy(model)
   metrics <- list(
     p_value_overall = p_overall,
     r_squared       = r_sq,
@@ -81,6 +100,7 @@ easy_regression <- function(formula, data, alpha = 0.05) {
       raw_model          = model,
       coefficients_table = coef_tbl,
       model_fit_table    = fit_tbl,
+      additional_tables  = additional_tables,
       explanation        = explanation
     ),
     class = "easystat_result"

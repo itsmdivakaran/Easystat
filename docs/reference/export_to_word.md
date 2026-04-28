@@ -23,6 +23,7 @@ export_to_word(
 
   An object of class `"easystat_result"` as returned by
   [`easy_regression`](https://EasyStat.github.io/EasyStat/reference/easy_regression.md),
+  [`easy_logistic_regression`](https://EasyStat.github.io/EasyStat/reference/easy_logistic_regression.md),
   [`easy_ttest`](https://EasyStat.github.io/EasyStat/reference/easy_ttest.md),
   or
   [`easy_anova`](https://EasyStat.github.io/EasyStat/reference/easy_anova.md).

@@ -45,8 +45,7 @@ easy_anova <- function(formula, data, alpha = 0.05) {
   colnames(coef_tbl) <- c("Source", "df", "Sum of Squares", "Mean Square",
                            "F Statistic", "p-value")
   coef_tbl[, 2:5] <- lapply(coef_tbl[, 2:5], function(v) round(as.numeric(v), 4))
-  coef_tbl[, 6]   <- sapply(as.numeric(coef_tbl[, 6]),
-                             function(p) format.pval(p, digits = 4, eps = 0.0001))
+  coef_tbl[, 6]   <- .format_p_value(as.numeric(coef_tbl[, 6]))
 
   # Extract primary effect row (first non-Residuals row)
   effect_row <- tidy_df[tidy_df$term != "Residuals", , drop = FALSE][1, ]
@@ -68,10 +67,12 @@ easy_anova <- function(formula, data, alpha = 0.05) {
     Metric = c("F-statistic", "Group df", "Residual df",
                "Overall p-value", "Eta-squared (\u03b7\u00b2)"),
     Value  = c(round(f_stat, 4), df_grp, df_res,
-               format.pval(p_val, digits = 4, eps = 0.0001),
+               .format_p_value(p_val),
                round(eta_sq, 4)),
     stringsAsFactors = FALSE
   )
+
+  additional_tables <- .anova_support_tables(model, formula, data, alpha)
 
   # Metrics bundle
   metrics <- list(
@@ -94,6 +95,7 @@ easy_anova <- function(formula, data, alpha = 0.05) {
       raw_model          = model,
       coefficients_table = coef_tbl,
       model_fit_table    = fit_tbl,
+      additional_tables  = additional_tables,
       explanation        = explanation
     ),
     class = "easystat_result"

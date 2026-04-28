@@ -123,11 +123,25 @@ easy_chisq <- function(x, y = NULL, data = NULL,
     Metric = c("Chi-square statistic (\u03c7\u00b2)", "Degrees of Freedom",
                "p-value", "N (total)", "Cram\u00e9r's V", "Effect Strength"),
     Value  = c(round(x2_val, 4), df_val,
-               format.pval(p_val, digits = 4, eps = 0.0001),
+               .format_p_value(p_val),
                n_total, round(cramers_v, 4),
                .cramers_v_label(cramers_v)),
     stringsAsFactors = FALSE
   )
+
+  additional_tables <- if (chisq_type == "independence") {
+    .contingency_tables(tbl, test_result$expected)
+  } else {
+    list(
+      "Goodness-of-fit Table" = data.frame(
+        Category = names(tbl),
+        Observed = as.vector(tbl),
+        Expected = round(as.vector(test_result$expected), 4),
+        Percentage = round(as.vector(prop.table(tbl) * 100), 4),
+        stringsAsFactors = FALSE
+      )
+    )
+  }
 
   # ---- Step 3: Narrative ----
   metrics <- list(
@@ -145,6 +159,7 @@ easy_chisq <- function(x, y = NULL, data = NULL,
       raw_model          = test_result,
       coefficients_table = coef_tbl,
       model_fit_table    = fit_tbl,
+      additional_tables  = additional_tables,
       explanation        = explanation
     ),
     class = "easystat_result"

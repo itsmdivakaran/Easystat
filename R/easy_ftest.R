@@ -9,7 +9,7 @@
 #' @param x A numeric vector (Group 1), OR a formula \code{outcome ~ group}.
 #' @param y A numeric vector (Group 2). Ignored when \code{x} is a formula.
 #' @param data A data frame. Required when \code{x} is a formula.
-#' @param ratio Hypothesised ratio of variances under H0. Default \code{1}.
+#' @param ratio Hypothesized ratio of variances under H0. Default \code{1}.
 #' @param alternative \code{"two.sided"} (default), \code{"less"}, or \code{"greater"}.
 #' @param conf_level Confidence level for the variance ratio CI. Default \code{0.95}.
 #' @param alpha Significance threshold for narrative. Default \code{0.05}.
@@ -97,7 +97,7 @@ easy_ftest <- function(x, y = NULL, data = NULL, ratio = 1,
     Metric = c("F-statistic", "Numerator df", "Denominator df",
                "p-value", "Alternative", "Conclusion"),
     Value  = c(round(f_stat, 4), df1_val, df2_val,
-               format.pval(p_val, digits = 4, eps = 0.0001),
+               .format_p_value(p_val),
                alternative,
                if (!is.na(p_val) && p_val < alpha) "Variances are UNEQUAL" else "Variances are EQUAL"),
     stringsAsFactors = FALSE

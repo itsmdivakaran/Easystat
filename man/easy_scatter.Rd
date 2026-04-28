@@ -18,7 +18,7 @@ easy_scatter(
 
 \item{data}{A data frame.}
 
-\item{color_by}{Optional column name to colour points by a third variable.}
+\item{color_by}{Optional column name to color points by a third variable.}
 
 \item{smooth}{Logical; show regression line? Default \code{TRUE}.}
 

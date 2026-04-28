@@ -12,4 +12,9 @@
 ^\.covrpage\.yaml$
 ^revdep$
 ^\.DS_Store$
+^\.RData$
+^\.Rhistory$
+^\.\.Rcheck$
 ^EasyStat_Copyright_Application\.docx$
+^\.claude$
+^CRAN-SUBMISSION$

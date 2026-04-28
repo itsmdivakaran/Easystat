@@ -10,12 +10,24 @@ comparisons.
 - [`easy_group_summary()`](https://EasyStat.github.io/EasyStat/reference/easy_group_summary.md)
   : Group-Wise Summary Statistics with Narrative
 
+## Regression Models
+
+Linear and logistic regression with automated model-fit summaries and
+narrative interpretation.
+
+- [`easy_regression()`](https://EasyStat.github.io/EasyStat/reference/easy_regression.md)
+  : Run a Linear Regression with Automated Narrative Reporting
+- [`easy_logistic_regression()`](https://EasyStat.github.io/EasyStat/reference/easy_logistic_regression.md)
+  : Run a Logistic Regression with Automated Narrative Reporting
+- [`easy_regression_diagnostics()`](https://EasyStat.github.io/EasyStat/reference/easy_regression_diagnostics.md)
+  : Regression Diagnostic Plot
+- [`easy_odds_ratio_plot()`](https://EasyStat.github.io/EasyStat/reference/easy_odds_ratio_plot.md)
+  : Odds Ratio Plot for Logistic Regression
+
 ## Inferential Tests
 
 Core statistical tests with automated plain-language narrative output.
 
-- [`easy_regression()`](https://EasyStat.github.io/EasyStat/reference/easy_regression.md)
-  : Run a Linear Regression with Automated Narrative Reporting
 - [`easy_ttest()`](https://EasyStat.github.io/EasyStat/reference/easy_ttest.md)
   : Run an Independent-Samples t-Test with Automated Narrative Reporting
 - [`easy_anova()`](https://EasyStat.github.io/EasyStat/reference/easy_anova.md)
@@ -28,6 +40,10 @@ Core statistical tests with automated plain-language narrative output.
   : F-Test for Equality of Variances with Automated Narrative Reporting
 - [`easy_correlation()`](https://EasyStat.github.io/EasyStat/reference/easy_correlation.md)
   : Correlation Analysis with Automated Narrative Reporting
+- [`easy_wilcox()`](https://EasyStat.github.io/EasyStat/reference/easy_wilcox.md)
+  : Wilcoxon Tests with Automated Narrative Reporting
+- [`easy_kruskal()`](https://EasyStat.github.io/EasyStat/reference/easy_kruskal.md)
+  : Kruskal-Wallis Test with Automated Narrative Reporting
 
 ## Visualization
 

@@ -99,10 +99,10 @@ print(result)
 #> 
 #> TABLE 2 — MODEL FIT / SUMMARY
 #> --------------------------------------------------------------------------------
-#>              Metric    Value
-#>         t-statistic  -3.7671
-#>  Degrees of Freedom    18.33
-#>             p-value 0.001374
+#>              Metric   Value
+#>         t-statistic -3.7671
+#>  Degrees of Freedom   18.33
+#>             p-value 0.1374%
 #> 
 #> ================================================================================
 #>  PLAIN-LANGUAGE INTERPRETATION
@@ -111,8 +111,8 @@ print(result)
 #> INDEPENDENT-SAMPLES t-TEST Comparison: mpg ~ am
 #> 
 #> An independent-samples t-test revealed a statistically significant (p =
-#>   0.0014) difference between the two groups (t(18.33) = -3.767). The mean for
-#>   '0' was 17.1474 and the mean for '1' was 24.3923. The 95% confidence
+#>   0.1374%) difference between the two groups (t(18.33) = -3.767). The mean
+#>   for '0' was 17.1474 and the mean for '1' was 24.3923. The 95% confidence
 #>   interval for the difference in means ranged from -11.2802 to -3.2097. These
 #>   results provide statistically significant evidence that '0' and '1' differ
 #>   meaningfully on the measured variable.

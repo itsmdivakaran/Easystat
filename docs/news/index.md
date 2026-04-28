@@ -4,6 +4,32 @@
 
 ### New Features
 
+- Added
+  [`easy_logistic_regression()`](https://EasyStat.github.io/EasyStat/reference/easy_logistic_regression.md)
+  for binary logistic regression with odds ratios, approximate
+  odds-ratio confidence intervals, likelihood-ratio model tests,
+  McFadden pseudo-R2, and automated narrative reporting.
+
+- Added richer supporting tables:
+
+  - ANOVA now includes group descriptives, assumption checks, and Tukey
+    post-hoc comparisons.
+  - Chi-square tests now include observed contingency tables, expected
+    counts, row percentages, column percentages, and total percentages.
+  - Regression now includes ANOVA, diagnostic, and
+    influential-observation tables.
+
+- Added
+  [`easy_wilcox()`](https://EasyStat.github.io/EasyStat/reference/easy_wilcox.md)
+  and
+  [`easy_kruskal()`](https://EasyStat.github.io/EasyStat/reference/easy_kruskal.md)
+  for common non-parametric workflows.
+
+- Added regression figures:
+  [`easy_regression_diagnostics()`](https://EasyStat.github.io/EasyStat/reference/easy_regression_diagnostics.md)
+  and
+  [`easy_odds_ratio_plot()`](https://EasyStat.github.io/EasyStat/reference/easy_odds_ratio_plot.md).
+
 - Added comprehensive descriptive statistics:
   [`easy_describe()`](https://EasyStat.github.io/EasyStat/reference/easy_describe.md)
   and
@@ -59,6 +85,8 @@
 
 ### Improvements
 
+- User-facing p-values now display as percentages rounded to 4 decimal
+  places across result tables, plot summaries, and narrative text.
 - Narrative Generator Module expanded with 15 conditional narrative
   templates covering all new test and plot types.
 - All functions return a unified `easystat_result` S3 object with

@@ -12,7 +12,7 @@ column name / numeric vector for a single-variable boxplot.}
 
 \item{data}{A data frame.}
 
-\item{fill_palette}{Character vector of fill colours. Default EasyStat palette.}
+\item{fill_palette}{Character vector of fill colors. Default EasyStat palette.}
 
 \item{notch}{Logical; draw notched boxes? Default \code{FALSE}.}
 

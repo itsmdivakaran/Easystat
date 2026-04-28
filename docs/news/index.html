@@ -34,7 +34,16 @@
 <h2 class="pkg-version" data-toc-text="2.0.0" id="easystat-200">EasyStat 2.0.0<a class="anchor" aria-label="anchor" href="#easystat-200"></a></h2>
 <div class="section level3">
 <h3 id="new-features-2-0-0">New Features<a class="anchor" aria-label="anchor" href="#new-features-2-0-0"></a></h3>
-<ul><li><p>Added comprehensive descriptive statistics: <code><a href="../reference/easy_describe.html">easy_describe()</a></code> and <code><a href="../reference/easy_group_summary.html">easy_group_summary()</a></code> with 21 statistics per variable (mean, median, mode, SD, variance, skewness, kurtosis, normality test, CI, and more).</p></li>
+<ul><li><p>Added <code><a href="../reference/easy_logistic_regression.html">easy_logistic_regression()</a></code> for binary logistic regression with odds ratios, approximate odds-ratio confidence intervals, likelihood-ratio model tests, McFadden pseudo-R2, and automated narrative reporting.</p></li>
+<li>
+<p>Added richer supporting tables:</p>
+<ul><li>ANOVA now includes group descriptives, assumption checks, and Tukey post-hoc comparisons.</li>
+<li>Chi-square tests now include observed contingency tables, expected counts, row percentages, column percentages, and total percentages.</li>
+<li>Regression now includes ANOVA, diagnostic, and influential-observation tables.</li>
+</ul></li>
+<li><p>Added <code><a href="../reference/easy_wilcox.html">easy_wilcox()</a></code> and <code><a href="../reference/easy_kruskal.html">easy_kruskal()</a></code> for common non-parametric workflows.</p></li>
+<li><p>Added regression figures: <code><a href="../reference/easy_regression_diagnostics.html">easy_regression_diagnostics()</a></code> and <code><a href="../reference/easy_odds_ratio_plot.html">easy_odds_ratio_plot()</a></code>.</p></li>
+<li><p>Added comprehensive descriptive statistics: <code><a href="../reference/easy_describe.html">easy_describe()</a></code> and <code><a href="../reference/easy_group_summary.html">easy_group_summary()</a></code> with 21 statistics per variable (mean, median, mode, SD, variance, skewness, kurtosis, normality test, CI, and more).</p></li>
 <li>
 <p>Extended inferential test suite with four new functions:</p>
 <ul><li>
@@ -70,7 +79,8 @@
 </ul></div>
 <div class="section level3">
 <h3 id="improvements-2-0-0">Improvements<a class="anchor" aria-label="anchor" href="#improvements-2-0-0"></a></h3>
-<ul><li>Narrative Generator Module expanded with 15 conditional narrative templates covering all new test and plot types.</li>
+<ul><li>User-facing p-values now display as percentages rounded to 4 decimal places across result tables, plot summaries, and narrative text.</li>
+<li>Narrative Generator Module expanded with 15 conditional narrative templates covering all new test and plot types.</li>
 <li>All functions return a unified <code>easystat_result</code> S3 object with consistent fields: <code>test_type</code>, <code>formula_str</code>, <code>raw_model</code>, <code>coefficients_table</code>, <code>model_fit_table</code>, and <code>explanation</code>.</li>
 <li>HTML Viewer output (<code>print.easystat_result</code>) redesigned with improved typography and responsive layout.</li>
 </ul><hr></div>

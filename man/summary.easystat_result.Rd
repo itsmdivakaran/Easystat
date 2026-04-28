@@ -2,7 +2,7 @@
 % Please edit documentation in R/print_methods.R
 \name{summary.easystat_result}
 \alias{summary.easystat_result}
-\title{Summarise an EasyStat Result Object}
+\title{Summarize an EasyStat Result Object}
 \usage{
 \method{summary}{easystat_result}(object, ...)
 }
@@ -12,5 +12,5 @@
 \item{...}{Passed to \code{print.easystat_result}.}
 }
 \description{
-Summarise an EasyStat Result Object
+Summarize an EasyStat Result Object
 }

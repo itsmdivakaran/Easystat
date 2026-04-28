@@ -68,6 +68,17 @@ print.easystat_result <- function(x, viewer = NULL, ...) {
   print(x$model_fit_table, row.names = FALSE)
   cat("\n")
 
+  if (!is.null(x$additional_tables) && length(x$additional_tables) > 0) {
+    table_no <- 3
+    for (nm in names(x$additional_tables)) {
+      cat("TABLE ", table_no, " \u2014 ", toupper(nm), "\n", sep = "")
+      cat(thin, "\n", sep = "")
+      print(x$additional_tables[[nm]], row.names = FALSE)
+      cat("\n")
+      table_no <- table_no + 1
+    }
+  }
+
   # --- Narrative ---
   cat(border, "\n", sep = "")
   cat(" PLAIN-LANGUAGE INTERPRETATION\n")
@@ -94,9 +105,10 @@ print.easystat_result <- function(x, viewer = NULL, ...) {
   }
 
   test_label <- switch(x$test_type,
-    regression = "Linear Regression",
-    ttest      = "Independent-Samples t-Test",
-    anova      = "One-Way ANOVA",
+    regression          = "Linear Regression",
+    logistic_regression = "Logistic Regression",
+    ttest               = "Independent-Samples t-Test",
+    anova               = "One-Way ANOVA",
     toupper(x$test_type)
   )
 
@@ -120,6 +132,22 @@ print.easystat_result <- function(x, viewer = NULL, ...) {
       font_size         = 13
     ) |>
     kableExtra::row_spec(0, bold = TRUE, background = "#2E5FA3", color = "white")
+
+  extra_html <- ""
+  if (!is.null(x$additional_tables) && length(x$additional_tables) > 0) {
+    extra_html <- paste(vapply(names(x$additional_tables), function(nm) {
+      tbl <- knitr::kable(x$additional_tables[[nm]], format = "html",
+                          caption = paste("Table -", nm), align = "l") |>
+        kableExtra::kable_styling(
+          bootstrap_options = c("striped", "hover", "condensed", "bordered"),
+          full_width = TRUE,
+          font_size = 13
+        ) |>
+        kableExtra::row_spec(0, bold = TRUE, background = "#2E5FA3", color = "white")
+      paste0('<div class="section-title" style="margin-top:28px;">',
+             htmltools::htmlEscape(nm), "</div>", as.character(tbl))
+    }, character(1)), collapse = "\n")
+  }
 
   # Wrap narrative paragraphs
   narrative_paragraphs <- strsplit(x$explanation, "\n")[[1]]
@@ -168,6 +196,7 @@ print.easystat_result <- function(x, viewer = NULL, ...) {
   ', as.character(tbl1_html), '
   <div class="section-title" style="margin-top:28px;">Model Fit / Summary</div>
   ', as.character(tbl2_html), '
+  ', extra_html, '
   <div class="section-title" style="margin-top:28px;">Plain-Language Interpretation</div>
   <div class="narrative-box">
   ', narrative_html, '
@@ -194,7 +223,7 @@ print.easystat_result <- function(x, viewer = NULL, ...) {
 # summary method \u2014 alias to print
 # ---------------------------------------------------------------------------
 
-#' Summarise an EasyStat Result Object
+#' Summarize an EasyStat Result Object
 #' @param object An \code{"easystat_result"} object.
 #' @param ... Passed to \code{print.easystat_result}.
 #' @export

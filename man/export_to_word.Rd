@@ -13,8 +13,8 @@ export_to_word(
 }
 \arguments{
 \item{result}{An object of class \code{"easystat_result"} as returned by
-\code{\link{easy_regression}}, \code{\link{easy_ttest}}, or
-\code{\link{easy_anova}}.}
+\code{\link{easy_regression}}, \code{\link{easy_logistic_regression}},
+\code{\link{easy_ttest}}, or \code{\link{easy_anova}}.}
 
 \item{file}{Character string. Path to the output \code{.docx} file.
 Defaults to \code{"EasyStat_Report.docx"} in the current working directory.}

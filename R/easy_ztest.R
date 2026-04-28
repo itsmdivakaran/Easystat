@@ -11,7 +11,7 @@
 #' @param y A numeric vector (Group 2) for a two-sample test. Ignored when
 #'   \code{x} is a formula.
 #' @param data A data frame. Required when \code{x} is a formula.
-#' @param mu Hypothesised population mean (one-sample) or mean difference
+#' @param mu Hypothesized population mean (one-sample) or mean difference
 #'   (two-sample). Default \code{0}.
 #' @param sigma Known population SD for Group 1 (or the single group).
 #'   If \code{NULL} (default), the sample SD is used.
@@ -158,7 +158,7 @@ easy_ztest <- function(x, y = NULL, data = NULL, mu = 0,
   fit_tbl <- data.frame(
     Metric = c("z-statistic", "p-value", "Alternative", "Cohen's d", "Effect size class"),
     Value  = c(round(z_stat, 4),
-               format.pval(p_val, digits = 4, eps = 0.0001),
+               .format_p_value(p_val),
                alternative,
                round(metrics$cohens_d, 4),
                .cohens_d_label(metrics$cohens_d)),

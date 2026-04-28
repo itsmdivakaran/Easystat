@@ -81,7 +81,7 @@ print(result)
 #> TABLE 2 — MODEL FIT / SUMMARY
 #> --------------------------------------------------------------------------------
 #>                Metric            Value
-#>               p-value          < 1e-04
+#>               p-value         <0.0001%
 #>  Correlation strength           strong
 #>             Direction         Negative
 #>     Effect size class large (d ≥ 0.80)
@@ -94,8 +94,8 @@ print(result)
 #> 
 #> A Pearson correlation analysis revealed a strong negative correlation between
 #>   the two variables (r = -0.8677), which is highly statistically significant
-#>   (p < 0.001). The coefficient of determination (r² = 0.7528) indicates that
-#>   approximately 75.3% of the variance in one variable is shared with the
+#>   (p < 0.0001%). The coefficient of determination (r² = 0.7528) indicates
+#>   that approximately 75.3% of the variance in one variable is shared with the
 #>   other. The 95% confidence interval for the correlation coefficient is
 #>   [-0.9338, -0.7441]. This strong relationship may have meaningful practical
 #>   implications and warrants further investigation.
@@ -112,13 +112,13 @@ print(result)
 #> 
 #> TABLE 1 — MAIN RESULTS
 #> --------------------------------------------------------------------------------
-#>  Var1 Var2       r r_squared p_value Strength Direction Sig
-#>   mpg   hp -0.7762    0.6024 < 1e-04   strong  Negative Yes
-#>   mpg   wt -0.8677    0.7528 < 1e-04   strong  Negative Yes
-#>   mpg disp -0.8476    0.7183 < 1e-04   strong  Negative Yes
-#>    hp   wt  0.6587    0.4339 < 1e-04 moderate  Positive Yes
-#>    hp disp  0.7909    0.6256 < 1e-04   strong  Positive Yes
-#>    wt disp  0.8880    0.7885 < 1e-04   strong  Positive Yes
+#>  Var1 Var2       r r_squared  p_value Strength Direction Sig
+#>   mpg   hp -0.7762    0.6024 <0.0001%   strong  Negative Yes
+#>   mpg   wt -0.8677    0.7528 <0.0001%   strong  Negative Yes
+#>   mpg disp -0.8476    0.7183 <0.0001%   strong  Negative Yes
+#>    hp   wt  0.6587    0.4339  0.0041% moderate  Positive Yes
+#>    hp disp  0.7909    0.6256 <0.0001%   strong  Positive Yes
+#>    wt disp  0.8880    0.7885 <0.0001%   strong  Positive Yes
 #> 
 #> TABLE 2 — MODEL FIT / SUMMARY
 #> --------------------------------------------------------------------------------

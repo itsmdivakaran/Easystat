@@ -11,10 +11,11 @@
 # ---------------------------------------------------------------------------
 .sig_label <- function(p_value, alpha = 0.05) {
   if (is.na(p_value)) return("could not be determined")
-  if (p_value < 0.001) return("highly statistically significant (p < 0.001)")
-  if (p_value < 0.01)  return(glue::glue("statistically significant (p = {round(p_value, 4)})"))
-  if (p_value < alpha) return(glue::glue("statistically significant (p = {round(p_value, 4)})"))
-  return(glue::glue("not statistically significant (p = {round(p_value, 4)})"))
+  p_text <- .format_p_statement(p_value)
+  if (p_value < 0.001) return(glue::glue("highly statistically significant ({p_text})"))
+  if (p_value < 0.01)  return(glue::glue("statistically significant ({p_text})"))
+  if (p_value < alpha) return(glue::glue("statistically significant ({p_text})"))
+  return(glue::glue("not statistically significant ({p_text})"))
 }
 
 # ---------------------------------------------------------------------------
@@ -105,6 +106,75 @@
     "LINEAR REGRESSION ANALYSIS\n",
     "Formula: {formula_str}\n\n",
     "{sig_sentence} {r2_sentence} {pred_sentences} {conclusion}"
+  )
+}
+
+# ---------------------------------------------------------------------------
+# Narrative: Logistic Regression
+# ---------------------------------------------------------------------------
+.generate_logistic_regression_narrative <- function(metrics, formula_str) {
+  sig      <- .sig_label(metrics$p_value_overall)
+  chi_val  <- if (!is.na(metrics$lrt_chisq)) round(metrics$lrt_chisq, 3) else "N/A"
+  df_val   <- if (!is.na(metrics$model_df)) metrics$model_df else "N/A"
+  r2_text  <- if (!is.na(metrics$pseudo_r2)) {
+    glue::glue("{round(metrics$pseudo_r2 * 100, 1)}%")
+  } else {
+    "N/A"
+  }
+
+  sig_sentence <- if (!is.na(metrics$p_value_overall) && metrics$p_value_overall < 0.05) {
+    glue::glue(
+      "The overall logistic regression model is {sig}, indicating that the predictor(s) ",
+      "improve classification of the binary outcome compared with an intercept-only model ",
+      "(\u03c7\u00b2({df_val}) = {chi_val})."
+    )
+  } else {
+    glue::glue(
+      "The overall logistic regression model is {sig}. This suggests that the predictor(s) ",
+      "do not improve classification of the binary outcome enough to reject the intercept-only model ",
+      "(\u03c7\u00b2({df_val}) = {chi_val})."
+    )
+  }
+
+  fit_sentence <- glue::glue(
+    "McFadden's pseudo-R\u00b2 is {r2_text}, with AIC = {round(metrics$aic, 3)} ",
+    "and BIC = {round(metrics$bic, 3)}."
+  )
+
+  pred_sentences <- ""
+  if (!is.null(metrics$term_details) && nrow(metrics$term_details) > 0) {
+    term_lines <- apply(metrics$term_details, 1, function(row) {
+      term_name <- row["term"]
+      est       <- suppressWarnings(as.numeric(row["estimate"]))
+      or_val    <- suppressWarnings(as.numeric(row["odds_ratio"]))
+      pv        <- suppressWarnings(as.numeric(row["p.value"]))
+      sig_text  <- .sig_label(pv)
+
+      if (term_name == "(Intercept)") {
+        glue::glue(
+          "The intercept corresponds to baseline odds of {.format_compact_number(or_val)} ({sig_text})."
+        )
+      } else {
+        direction <- if (!is.na(est) && est >= 0) "higher" else "lower"
+        glue::glue(
+          "For '{term_name}', each one-unit increase is associated with {direction} odds ",
+          "of the event (odds ratio = {.format_compact_number(or_val)}), and this effect is {sig_text}."
+        )
+      }
+    })
+    pred_sentences <- paste(term_lines, collapse = " ")
+  }
+
+  conclusion <- if (!is.na(metrics$p_value_overall) && metrics$p_value_overall < 0.05) {
+    "Overall, the model provides statistically meaningful evidence about the binary outcome."
+  } else {
+    "Overall, the model should be interpreted cautiously because the overall improvement over the null model is not statistically significant."
+  }
+
+  glue::glue(
+    "LOGISTIC REGRESSION ANALYSIS\n",
+    "Formula: {formula_str}\n\n",
+    "{sig_sentence} {fit_sentence} {pred_sentences} {conclusion}"
   )
 }
 
@@ -259,8 +329,8 @@
 
 .norm_label <- function(p) {
   if (is.na(p)) return("normality could not be assessed")
-  if (p < 0.05) return(glue::glue("non-normal (Shapiro-Wilk p = {round(p, 4)})"))
-  return(glue::glue("approximately normal (Shapiro-Wilk p = {round(p, 4)})"))
+  if (p < 0.05) return(glue::glue("non-normal (Shapiro-Wilk {.format_p_statement(p)})"))
+  return(glue::glue("approximately normal (Shapiro-Wilk {.format_p_statement(p)})"))
 }
 
 # ---------------------------------------------------------------------------

@@ -39,14 +39,23 @@ SECTION("2. CORE INFERENTIAL TESTS")
 
 r <- easy_regression(mpg ~ wt + hp, data = mtcars)
 stopifnot(r$test_type == "regression")
+stopifnot("Regression Diagnostics" %in% names(r$additional_tables))
 PASS("easy_regression (mpg ~ wt + hp)")
+print(r, viewer = FALSE)
+
+r <- easy_logistic_regression(am ~ mpg + wt, data = mtcars)
+stopifnot(r$test_type == "logistic_regression")
+stopifnot("Confusion Matrix" %in% names(r$additional_tables))
+PASS("easy_logistic_regression (am ~ mpg + wt)")
 print(r, viewer = FALSE)
 
 r <- easy_ttest(mpg ~ am, data = mtcars)
 stopifnot(r$test_type == "ttest"); PASS("easy_ttest (mpg ~ am)")
 
 r <- easy_anova(Sepal.Length ~ Species, data = iris)
-stopifnot(r$test_type == "anova"); PASS("easy_anova")
+stopifnot(r$test_type == "anova")
+stopifnot("Tukey Post-hoc Comparisons" %in% names(r$additional_tables))
+PASS("easy_anova")
 print(r, viewer = FALSE)
 
 # ============================================================
@@ -54,7 +63,9 @@ SECTION("3. EXTENDED INFERENTIAL TESTS")
 # ============================================================
 
 r <- easy_chisq(~ cyl + am, data = mtcars)
-stopifnot(r$test_type == "chisq"); PASS("easy_chisq independence")
+stopifnot(r$test_type == "chisq")
+stopifnot("Observed Contingency Table" %in% names(r$additional_tables))
+PASS("easy_chisq independence")
 print(r, viewer = FALSE)
 
 r <- easy_chisq(~ cyl, data = mtcars)
@@ -77,6 +88,12 @@ print(r, viewer = FALSE)
 
 r <- easy_correlation(mtcars, vars = c("mpg","hp","wt","disp"))
 stopifnot(r$test_type == "correlation_matrix"); PASS("easy_correlation matrix")
+
+r <- easy_wilcox(mpg ~ am, data = mtcars)
+stopifnot(r$test_type == "wilcox"); PASS("easy_wilcox")
+
+r <- easy_kruskal(Sepal.Length ~ Species, data = iris)
+stopifnot(r$test_type == "kruskal"); PASS("easy_kruskal")
 
 # ============================================================
 SECTION("4. VISUALIZATIONS")
@@ -117,6 +134,13 @@ stopifnot(inherits(p$plot_object, "gg")); PASS("easy_correlation_heatmap")
 print(p$plot_object)
 
 reg_result <- easy_regression(mpg ~ wt, data = mtcars)
+p <- easy_regression_diagnostics(reg_result)
+stopifnot(inherits(p$plot_object, "gg")); PASS("easy_regression_diagnostics")
+
+logit_result <- easy_logistic_regression(am ~ mpg + wt, data = mtcars)
+p <- easy_odds_ratio_plot(logit_result)
+stopifnot(inherits(p$plot_object, "gg")); PASS("easy_odds_ratio_plot")
+
 easy_autoplot(reg_result, data = mtcars)
 PASS("easy_autoplot (regression -> scatter)")
 

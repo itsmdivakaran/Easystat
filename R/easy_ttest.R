@@ -95,7 +95,7 @@ easy_ttest <- function(x, y = NULL, data = NULL, mu = 0,
   # Model fit table
   fit_tbl <- data.frame(
     Metric = c("t-statistic", "Degrees of Freedom", "p-value"),
-    Value  = c(round(t_stat, 4), round(df_val, 2), format.pval(p_val, digits = 4, eps = 0.0001)),
+    Value  = c(round(t_stat, 4), round(df_val, 2), .format_p_value(p_val)),
     stringsAsFactors = FALSE
   )
 

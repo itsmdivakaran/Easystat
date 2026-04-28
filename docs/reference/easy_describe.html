@@ -104,9 +104,9 @@ is a data frame. If <code>NULL</code> (default), all numeric columns are used.</
 <span class="r-out co"><span class="r-pr">#&gt;</span>  96.5000 180.00 335.000 283.000 83.5000 46.7408   0.7994   0.2752 121.9679</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   2.5812   3.61   5.424   3.911  1.0288 30.4129   0.4659   0.4166   2.8645</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  CI_upper Shapiro_p</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   22.2636    0.1229</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  171.4071   0.04881</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    3.5700   0.09265</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   22.2636  12.2881%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  171.4071   4.8808%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    3.5700   9.2655%</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> TABLE 2 — MODEL FIT / SUMMARY</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --------------------------------------------------------------------------------</span>
@@ -118,10 +118,10 @@ is a data frame. If <code>NULL</code> (default), all numeric columns are used.</
 <span class="r-out co"><span class="r-pr">#&gt;</span>  approximately mesokurtic (similar tail weight to a normal distribution)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  approximately mesokurtic (similar tail weight to a normal distribution)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  approximately mesokurtic (similar tail weight to a normal distribution)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                       Normality Shapiro_p</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  approximately normal (Shapiro-Wilk p = 0.1229)    0.1229</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            non-normal (Shapiro-Wilk p = 0.0488)   0.04881</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  approximately normal (Shapiro-Wilk p = 0.0927)   0.09265</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                         Normality Shapiro_p</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  approximately normal (Shapiro-Wilk p = 12.2881%)  12.2881%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             non-normal (Shapiro-Wilk p = 4.8808%)   4.8808%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   approximately normal (Shapiro-Wilk p = 9.2655%)   9.2655%</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ================================================================================</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  PLAIN-LANGUAGE INTERPRETATION</span>
@@ -135,9 +135,9 @@ is a data frame. If <code>NULL</code> (default), all numeric columns are used.</
 <span class="r-out co"><span class="r-pr">#&gt;</span>   IQR = 7.375). The distribution is moderately right-skewed and approximately</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   mesokurtic (similar tail weight to a normal distribution). Based on the</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Shapiro-Wilk test, the data are approximately normal (Shapiro-Wilk p =</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.1229). The coefficient of variation is 30%, indicating moderate relative</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   variability. The 95% confidence interval for the population mean is</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [17.9177, 22.2636].</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   12.2881%). The coefficient of variation is 30%, indicating moderate</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   relative variability. The 95% confidence interval for the population mean</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   is [17.9177, 22.2636].</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ---</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -148,7 +148,7 @@ is a data frame. If <code>NULL</code> (default), all numeric columns are used.</
 <span class="r-out co"><span class="r-pr">#&gt;</span>   standard deviation of 68.5629. Values range from 52 to 335 (range = 283;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   IQR = 83.5). The distribution is moderately right-skewed and approximately</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   mesokurtic (similar tail weight to a normal distribution). Based on the</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Shapiro-Wilk test, the data are non-normal (Shapiro-Wilk p = 0.0488). The</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Shapiro-Wilk test, the data are non-normal (Shapiro-Wilk p = 4.8808%). The</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   coefficient of variation is 46.7%, indicating high relative variability.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   The 95% confidence interval for the population mean is [121.9679,</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   171.4071].</span>
@@ -163,7 +163,7 @@ is a data frame. If <code>NULL</code> (default), all numeric columns are used.</
 <span class="r-out co"><span class="r-pr">#&gt;</span>   3.911; IQR = 1.0288). The distribution is approximately symmetric and</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   approximately mesokurtic (similar tail weight to a normal distribution).</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Based on the Shapiro-Wilk test, the data are approximately normal</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (Shapiro-Wilk p = 0.0927). The coefficient of variation is 30.4%,</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (Shapiro-Wilk p = 9.2655%). The coefficient of variation is 30.4%,</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   indicating high relative variability. The 95% confidence interval for the</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   population mean is [2.8645, 3.57].</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>

@@ -85,7 +85,7 @@ print(result)
 #>     F-statistic              0.3866
 #>    Numerator df                  18
 #>  Denominator df                  12
-#>         p-value             0.06691
+#>         p-value             6.6906%
 #>     Alternative           two.sided
 #>      Conclusion Variances are EQUAL
 #> 
@@ -96,7 +96,7 @@ print(result)
 #> F-TEST FOR EQUALITY OF VARIANCES Comparison: mpg ~ am
 #> 
 #> An F-test for equality of variances found not statistically significant (p =
-#>   0.0669) evidence of a difference in variance between the two groups (F(18,
+#>   6.6906%) evidence of a difference in variance between the two groups (F(18,
 #>   12) = 0.3866). The ratio of variances is 0.3866. The 95% CI for the
 #>   variance ratio is [0.1244, 1.0703]. IMPLICATION: The assumption of equal
 #>   variances (homoscedasticity) is SUPPORTED. Both the classical t-test and
