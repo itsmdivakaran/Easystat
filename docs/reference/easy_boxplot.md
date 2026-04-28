@@ -23,7 +23,7 @@ easy_boxplot(formula, data, fill_palette = NULL, notch = FALSE, title = NULL)
 
 - fill_palette:
 
-  Character vector of fill colours. Default EasyStat palette.
+  Character vector of fill colors. Default EasyStat palette.
 
 - notch:
 

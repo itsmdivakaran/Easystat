@@ -1,6 +1,6 @@
-# Summarise an EasyStat Result Object
+# Summarize an EasyStat Result Object
 
-Summarise an EasyStat Result Object
+Summarize an EasyStat Result Object
 
 ## Usage
 

@@ -1,4 +1,4 @@
-url: https://EasyStat.github.io/EasyStat/
+url: https://itsmdivakaran.github.io/Easystat/
 
 template:
   bootstrap: 5
@@ -26,7 +26,7 @@ navbar:
       href: news/index.html
   right:
     - icon: fab fa-github
-      href: https://github.com/EasyStat/EasyStat
+      href: https://github.com/itsmdivakaran/Easystat
       aria-label: "GitHub repository"
 
 home:
@@ -38,9 +38,9 @@ home:
     Word export.
   links:
     - text: "Browse source on GitHub"
-      href: https://github.com/EasyStat/EasyStat
+      href: https://github.com/itsmdivakaran/Easystat
     - text: "Report a bug"
-      href: https://github.com/EasyStat/EasyStat/issues
+      href: https://github.com/itsmdivakaran/Easystat/issues
 
 reference:
   - title: "Descriptive Statistics"

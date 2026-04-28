@@ -26,7 +26,7 @@ install.packages("EasyStat")
 
 # Development version from GitHub
 # install.packages("devtools")
-devtools::install_github("itsmdivakaran/EasyStat")
+devtools::install_github("itsmdivakaran/Easystat")
 
 # From local source
 install.packages("path/to/EasyStat", repos = NULL, type = "source")
@@ -76,50 +76,50 @@ export_to_word(result, file = "report.docx", title = "Transmission Model",
 
 | Function | Description |
 |----|----|
-| [`easy_describe()`](https://EasyStat.github.io/EasyStat/reference/easy_describe.md) | 21-statistic summary for one or more numeric variables |
-| [`easy_group_summary()`](https://EasyStat.github.io/EasyStat/reference/easy_group_summary.md) | Stratified descriptives by a grouping factor |
+| [`easy_describe()`](https://itsmdivakaran.github.io/Easystat/reference/easy_describe.md) | 21-statistic summary for one or more numeric variables |
+| [`easy_group_summary()`](https://itsmdivakaran.github.io/Easystat/reference/easy_group_summary.md) | Stratified descriptives by a grouping factor |
 
 ### Regression Models
 
 | Function | Model | Key Output |
 |----|----|----|
-| [`easy_regression()`](https://EasyStat.github.io/EasyStat/reference/easy_regression.md) | Linear regression | R-squared, ANOVA table, diagnostics, influential observations |
-| [`easy_logistic_regression()`](https://EasyStat.github.io/EasyStat/reference/easy_logistic_regression.md) | Binary logistic regression | Odds ratios, OR CIs, classification table, McFadden pseudo-R2 |
+| [`easy_regression()`](https://itsmdivakaran.github.io/Easystat/reference/easy_regression.md) | Linear regression | R-squared, ANOVA table, diagnostics, influential observations |
+| [`easy_logistic_regression()`](https://itsmdivakaran.github.io/Easystat/reference/easy_logistic_regression.md) | Binary logistic regression | Odds ratios, OR CIs, classification table, McFadden pseudo-R2 |
 
 ### Inferential Tests
 
 | Function | Test | Effect Size |
 |----|----|----|
-| [`easy_ttest()`](https://EasyStat.github.io/EasyStat/reference/easy_ttest.md) | Independent / one-sample t-test | Cohen’s d |
-| [`easy_anova()`](https://EasyStat.github.io/EasyStat/reference/easy_anova.md) | One-way ANOVA with post-hoc context | eta-squared |
-| [`easy_chisq()`](https://EasyStat.github.io/EasyStat/reference/easy_chisq.md) | Chi-square independence and GOF | Cramer’s V |
-| [`easy_ztest()`](https://EasyStat.github.io/EasyStat/reference/easy_ztest.md) | One- and two-sample z-test | Cohen’s d |
-| [`easy_ftest()`](https://EasyStat.github.io/EasyStat/reference/easy_ftest.md) | F-test for equality of variances | Variance ratio + CI |
-| [`easy_correlation()`](https://EasyStat.github.io/EasyStat/reference/easy_correlation.md) | Pearson / Spearman / Kendall correlation and matrix | r, r-squared |
-| [`easy_wilcox()`](https://EasyStat.github.io/EasyStat/reference/easy_wilcox.md) | Wilcoxon rank-sum / signed-rank test | Median comparison + CI |
-| [`easy_kruskal()`](https://EasyStat.github.io/EasyStat/reference/easy_kruskal.md) | Kruskal-Wallis test | Rank-based eta-squared |
+| [`easy_ttest()`](https://itsmdivakaran.github.io/Easystat/reference/easy_ttest.md) | Independent / one-sample t-test | Cohen’s d |
+| [`easy_anova()`](https://itsmdivakaran.github.io/Easystat/reference/easy_anova.md) | One-way ANOVA with post-hoc context | eta-squared |
+| [`easy_chisq()`](https://itsmdivakaran.github.io/Easystat/reference/easy_chisq.md) | Chi-square independence and GOF | Cramér’s V |
+| [`easy_ztest()`](https://itsmdivakaran.github.io/Easystat/reference/easy_ztest.md) | One- and two-sample z-test | Cohen’s d |
+| [`easy_ftest()`](https://itsmdivakaran.github.io/Easystat/reference/easy_ftest.md) | F-test for equality of variances | Variance ratio + CI |
+| [`easy_correlation()`](https://itsmdivakaran.github.io/Easystat/reference/easy_correlation.md) | Pearson / Spearman / Kendall correlation and matrix | r, r-squared |
+| [`easy_wilcox()`](https://itsmdivakaran.github.io/Easystat/reference/easy_wilcox.md) | Wilcoxon rank-sum / signed-rank test | Median comparison + CI |
+| [`easy_kruskal()`](https://itsmdivakaran.github.io/Easystat/reference/easy_kruskal.md) | Kruskal-Wallis test | Rank-based eta-squared |
 
 ### Visualizations
 
 | Function | Plot type |
 |----|----|
-| [`easy_histogram()`](https://EasyStat.github.io/EasyStat/reference/easy_histogram.md) | Histogram with normal-curve overlay |
-| [`easy_boxplot()`](https://EasyStat.github.io/EasyStat/reference/easy_boxplot.md) | Grouped box-and-whisker plot |
-| [`easy_scatter()`](https://EasyStat.github.io/EasyStat/reference/easy_scatter.md) | Scatter plot with regression line and R-squared |
-| [`easy_barplot()`](https://EasyStat.github.io/EasyStat/reference/easy_barplot.md) | Count or mean (+/- SE) bar chart |
-| [`easy_qqplot()`](https://EasyStat.github.io/EasyStat/reference/easy_qqplot.md) | Q-Q normality plot |
-| [`easy_density()`](https://EasyStat.github.io/EasyStat/reference/easy_density.md) | Kernel density curve, optionally grouped |
-| [`easy_correlation_heatmap()`](https://EasyStat.github.io/EasyStat/reference/easy_correlation_heatmap.md) | Annotated pairwise correlation heatmap |
-| [`easy_regression_diagnostics()`](https://EasyStat.github.io/EasyStat/reference/easy_regression_diagnostics.md) | Fitted-vs-residuals diagnostic plot |
-| [`easy_odds_ratio_plot()`](https://EasyStat.github.io/EasyStat/reference/easy_odds_ratio_plot.md) | Logistic regression odds-ratio plot |
-| [`easy_autoplot()`](https://EasyStat.github.io/EasyStat/reference/easy_autoplot.md) | Smart dispatcher that picks the right plot for a result |
+| [`easy_histogram()`](https://itsmdivakaran.github.io/Easystat/reference/easy_histogram.md) | Histogram with normal-curve overlay |
+| [`easy_boxplot()`](https://itsmdivakaran.github.io/Easystat/reference/easy_boxplot.md) | Grouped box-and-whisker plot |
+| [`easy_scatter()`](https://itsmdivakaran.github.io/Easystat/reference/easy_scatter.md) | Scatter plot with regression line and R-squared |
+| [`easy_barplot()`](https://itsmdivakaran.github.io/Easystat/reference/easy_barplot.md) | Count or mean (+/- SE) bar chart |
+| [`easy_qqplot()`](https://itsmdivakaran.github.io/Easystat/reference/easy_qqplot.md) | Q-Q normality plot |
+| [`easy_density()`](https://itsmdivakaran.github.io/Easystat/reference/easy_density.md) | Kernel density curve, optionally grouped |
+| [`easy_correlation_heatmap()`](https://itsmdivakaran.github.io/Easystat/reference/easy_correlation_heatmap.md) | Annotated pairwise correlation heatmap |
+| [`easy_regression_diagnostics()`](https://itsmdivakaran.github.io/Easystat/reference/easy_regression_diagnostics.md) | Fitted-vs-residuals diagnostic plot |
+| [`easy_odds_ratio_plot()`](https://itsmdivakaran.github.io/Easystat/reference/easy_odds_ratio_plot.md) | Logistic regression odds-ratio plot |
+| [`easy_autoplot()`](https://itsmdivakaran.github.io/Easystat/reference/easy_autoplot.md) | Smart dispatcher that picks the right plot for a result |
 
 ### Theme & Export
 
 | Function | Description |
 |----|----|
-| [`theme_easystat()`](https://EasyStat.github.io/EasyStat/reference/theme_easystat.md) | Consistent ggplot2 theme for all plots |
-| [`export_to_word()`](https://EasyStat.github.io/EasyStat/reference/export_to_word.md) | Formatted `.docx` report with flextable and officer |
+| [`theme_easystat()`](https://itsmdivakaran.github.io/Easystat/reference/theme_easystat.md) | Consistent ggplot2 theme for all plots |
+| [`export_to_word()`](https://itsmdivakaran.github.io/Easystat/reference/export_to_word.md) | Formatted `.docx` report with flextable and officer |
 
 ## Output Modes
 
@@ -127,7 +127,7 @@ export_to_word(result, file = "report.docx", title = "Transmission Model",
 |----|----|
 | RStudio HTML Viewer | Auto-detected in interactive sessions |
 | Console | Scripts, terminals, non-interactive sessions |
-| Word `.docx` | [`export_to_word()`](https://EasyStat.github.io/EasyStat/reference/export_to_word.md) |
+| Word `.docx` | [`export_to_word()`](https://itsmdivakaran.github.io/Easystat/reference/export_to_word.md) |
 
 ## Running the Smoke Test
 
@@ -148,4 +148,4 @@ If you use EasyStat in your research, please cite:
 ## License
 
 MIT (c) 2026 EasyStat Authors. See
-[LICENSE](https://EasyStat.github.io/EasyStat/LICENSE) for details.
+[LICENSE](https://itsmdivakaran.github.io/Easystat/LICENSE) for details.

@@ -14,17 +14,17 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/itsmdivakaran/EasyStat/blob/HEAD/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/itsmdivakaran/Easystat/blob/HEAD/DESCRIPTION)
 
 Divakaran M, Singh G, Shreedharan J (2026). *EasyStat: Automated
 Statistical Analysis, Visualization and Multi-Format Narrative
 Reporting*. R package version 2.0.0,
-<https://github.com/itsmdivakaran/EasyStat>.
+<https://github.com/itsmdivakaran/Easystat>.
 
     @Manual{,
       title = {EasyStat: Automated Statistical Analysis, Visualization and Multi-Format Narrative Reporting},
       author = {Mahesh Divakaran and Gunjan Singh and Jayadevan Shreedharan},
       year = {2026},
       note = {R package version 2.0.0},
-      url = {https://github.com/itsmdivakaran/EasyStat},
+      url = {https://github.com/itsmdivakaran/Easystat},
     }

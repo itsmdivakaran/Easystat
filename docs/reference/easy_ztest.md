@@ -40,7 +40,7 @@ easy_ztest(
 
 - mu:
 
-  Hypothesised population mean (one-sample) or mean difference
+  Hypothesized population mean (one-sample) or mean difference
   (two-sample). Default `0`.
 
 - sigma:

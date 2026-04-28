@@ -7,31 +7,31 @@ Module, and Unified Result Object — transforms raw data into
 publication-ready output with a single function call.
 
 **Descriptive statistics:**
-[`easy_describe`](https://EasyStat.github.io/EasyStat/reference/easy_describe.md),
-[`easy_group_summary`](https://EasyStat.github.io/EasyStat/reference/easy_group_summary.md)
+[`easy_describe`](https://itsmdivakaran.github.io/Easystat/reference/easy_describe.md),
+[`easy_group_summary`](https://itsmdivakaran.github.io/Easystat/reference/easy_group_summary.md)
 
 **Inferential tests:**
-[`easy_regression`](https://EasyStat.github.io/EasyStat/reference/easy_regression.md),
-[`easy_ttest`](https://EasyStat.github.io/EasyStat/reference/easy_ttest.md),
-[`easy_anova`](https://EasyStat.github.io/EasyStat/reference/easy_anova.md),
-[`easy_chisq`](https://EasyStat.github.io/EasyStat/reference/easy_chisq.md),
-[`easy_ztest`](https://EasyStat.github.io/EasyStat/reference/easy_ztest.md),
-[`easy_ftest`](https://EasyStat.github.io/EasyStat/reference/easy_ftest.md),
-[`easy_correlation`](https://EasyStat.github.io/EasyStat/reference/easy_correlation.md)
+[`easy_regression`](https://itsmdivakaran.github.io/Easystat/reference/easy_regression.md),
+[`easy_ttest`](https://itsmdivakaran.github.io/Easystat/reference/easy_ttest.md),
+[`easy_anova`](https://itsmdivakaran.github.io/Easystat/reference/easy_anova.md),
+[`easy_chisq`](https://itsmdivakaran.github.io/Easystat/reference/easy_chisq.md),
+[`easy_ztest`](https://itsmdivakaran.github.io/Easystat/reference/easy_ztest.md),
+[`easy_ftest`](https://itsmdivakaran.github.io/Easystat/reference/easy_ftest.md),
+[`easy_correlation`](https://itsmdivakaran.github.io/Easystat/reference/easy_correlation.md)
 
 **Visualizations:**
-[`easy_histogram`](https://EasyStat.github.io/EasyStat/reference/easy_histogram.md),
-[`easy_boxplot`](https://EasyStat.github.io/EasyStat/reference/easy_boxplot.md),
-[`easy_scatter`](https://EasyStat.github.io/EasyStat/reference/easy_scatter.md),
-[`easy_barplot`](https://EasyStat.github.io/EasyStat/reference/easy_barplot.md),
-[`easy_qqplot`](https://EasyStat.github.io/EasyStat/reference/easy_qqplot.md),
-[`easy_density`](https://EasyStat.github.io/EasyStat/reference/easy_density.md),
-[`easy_correlation_heatmap`](https://EasyStat.github.io/EasyStat/reference/easy_correlation_heatmap.md),
-[`easy_autoplot`](https://EasyStat.github.io/EasyStat/reference/easy_autoplot.md)
+[`easy_histogram`](https://itsmdivakaran.github.io/Easystat/reference/easy_histogram.md),
+[`easy_boxplot`](https://itsmdivakaran.github.io/Easystat/reference/easy_boxplot.md),
+[`easy_scatter`](https://itsmdivakaran.github.io/Easystat/reference/easy_scatter.md),
+[`easy_barplot`](https://itsmdivakaran.github.io/Easystat/reference/easy_barplot.md),
+[`easy_qqplot`](https://itsmdivakaran.github.io/Easystat/reference/easy_qqplot.md),
+[`easy_density`](https://itsmdivakaran.github.io/Easystat/reference/easy_density.md),
+[`easy_correlation_heatmap`](https://itsmdivakaran.github.io/Easystat/reference/easy_correlation_heatmap.md),
+[`easy_autoplot`](https://itsmdivakaran.github.io/Easystat/reference/easy_autoplot.md)
 
 **Reporting:**
-[`export_to_word`](https://EasyStat.github.io/EasyStat/reference/export_to_word.md),
-[`theme_easystat`](https://EasyStat.github.io/EasyStat/reference/theme_easystat.md)
+[`export_to_word`](https://itsmdivakaran.github.io/Easystat/reference/export_to_word.md),
+[`theme_easystat`](https://itsmdivakaran.github.io/Easystat/reference/theme_easystat.md)
 
 ## Authors
 

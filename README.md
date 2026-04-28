@@ -2,9 +2,9 @@
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/EasyStat)](https://CRAN.R-project.org/package=EasyStat)
-[![R-CMD-check](https://github.com/itsmdivakaran/EasyStat/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/itsmdivakaran/EasyStat/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/itsmdivakaran/Easystat/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/itsmdivakaran/Easystat/actions/workflows/R-CMD-check.yaml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![pkgdown](https://img.shields.io/badge/docs-pkgdown-blue)](https://EasyStat.github.io/EasyStat/)
+[![pkgdown](https://img.shields.io/badge/docs-pkgdown-blue)](https://itsmdivakaran.github.io/Easystat/)
 <!-- badges: end -->
 
 **Automated Statistical Analysis, Visualization, and Multi-Format Narrative Reporting in R**
@@ -25,7 +25,7 @@ install.packages("EasyStat")
 
 # Development version from GitHub
 # install.packages("devtools")
-devtools::install_github("itsmdivakaran/EasyStat")
+devtools::install_github("itsmdivakaran/Easystat")
 
 # From local source
 install.packages("path/to/EasyStat", repos = NULL, type = "source")

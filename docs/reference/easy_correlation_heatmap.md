@@ -1,6 +1,6 @@
 # Correlation Matrix Heatmap
 
-Computes pairwise correlations and displays them as a colour-coded
+Computes pairwise correlations and displays them as a color-coded
 heatmap, annotating each cell with the correlation coefficient and a
 significance star.
 

@@ -37,7 +37,7 @@ easy_ftest(
 
 - ratio:
 
-  Hypothesised ratio of variances under H0. Default `1`.
+  Hypothesized ratio of variances under H0. Default `1`.
 
 - alternative:
 

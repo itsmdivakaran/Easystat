@@ -22,11 +22,11 @@ export_to_word(
 - result:
 
   An object of class `"easystat_result"` as returned by
-  [`easy_regression`](https://EasyStat.github.io/EasyStat/reference/easy_regression.md),
-  [`easy_logistic_regression`](https://EasyStat.github.io/EasyStat/reference/easy_logistic_regression.md),
-  [`easy_ttest`](https://EasyStat.github.io/EasyStat/reference/easy_ttest.md),
+  [`easy_regression`](https://itsmdivakaran.github.io/Easystat/reference/easy_regression.md),
+  [`easy_logistic_regression`](https://itsmdivakaran.github.io/Easystat/reference/easy_logistic_regression.md),
+  [`easy_ttest`](https://itsmdivakaran.github.io/Easystat/reference/easy_ttest.md),
   or
-  [`easy_anova`](https://EasyStat.github.io/EasyStat/reference/easy_anova.md).
+  [`easy_anova`](https://itsmdivakaran.github.io/Easystat/reference/easy_anova.md).
 
 - file:
 

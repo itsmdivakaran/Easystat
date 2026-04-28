@@ -689,7 +689,7 @@ p$plot_object
 
 ## Export to Microsoft Word
 
-[`export_to_word()`](https://EasyStat.github.io/EasyStat/reference/export_to_word.md)
+[`export_to_word()`](https://itsmdivakaran.github.io/Easystat/reference/export_to_word.md)
 creates a formatted `.docx` report with the result narrative and tables.
 
 ``` r

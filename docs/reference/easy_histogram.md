@@ -34,7 +34,7 @@ easy_histogram(
 
 - fill_color:
 
-  Bar fill colour. Default EasyStat primary blue.
+  Bar fill color. Default EasyStat primary blue.
 
 - show_normal:
 

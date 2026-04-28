@@ -29,7 +29,7 @@ easy_scatter(
 
 - color_by:
 
-  Optional column name to colour points by a third variable.
+  Optional column name to color points by a third variable.
 
 - smooth:
 

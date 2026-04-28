@@ -3,4 +3,4 @@
 ### Getting Started
 
 - [Getting Started with
-  EasyStat](https://EasyStat.github.io/EasyStat/articles/EasyStat.md):
+  EasyStat](https://itsmdivakaran.github.io/Easystat/articles/EasyStat.md):
