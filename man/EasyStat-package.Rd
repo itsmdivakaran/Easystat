@@ -41,8 +41,9 @@ Jayadevan Shreedharan (Gulf Medical University)
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/itsmdivakaran/EasyStat}
-  \item Report bugs at \url{https://github.com/itsmdivakaran/EasyStat/issues}
+  \item \url{https://github.com/itsmdivakaran/Easystat}
+  \item \url{https://itsmdivakaran.github.io/Easystat/}
+  \item Report bugs at \url{https://github.com/itsmdivakaran/Easystat/issues}
 }
 
 }

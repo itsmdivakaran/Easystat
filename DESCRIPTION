@@ -15,21 +15,21 @@ Authors@R: c(
            role    = "aut",
            comment = c(Affiliation = "Gulf Medical University"))
     )
-Description: A comprehensive R package for automated statistical analysis,
-    rich visualization, and multi-format narrative reporting. Provides a
-    unified pipeline for: descriptive statistics ('easy_describe',
-    'easy_group_summary'); inferential tests with plain-language narratives
-    ('easy_regression', 'easy_logistic_regression', 'easy_ttest', 'easy_anova',
-    'easy_chisq', 'easy_ztest', 'easy_ftest', 'easy_correlation', 'easy_wilcox',
-    'easy_kruskal'); and publication-ready 'ggplot2' visualizations
-    ('easy_histogram', 'easy_boxplot', 'easy_scatter', 'easy_barplot',
-    'easy_qqplot', 'easy_density', 'easy_correlation_heatmap',
-    'easy_regression_diagnostics', 'easy_odds_ratio_plot'). The core Narrative
-    Generator Module applies conditional logic to extracted p-values, effect
-    sizes, and model-fit metrics to produce statistically sound, human-readable
-    explanations automatically. Results render in the 'RStudio' Viewer (HTML),
-    the console (ASCII), or export directly to Microsoft Word via 'flextable'
-    and 'officer'.
+Description: Provides automated statistical analysis, rich visualization, and
+    multi-format narrative reporting through a unified pipeline. Descriptive
+    statistics are available via easy_describe() and easy_group_summary().
+    Inferential tests with plain-language narratives are provided by
+    easy_regression(), easy_logistic_regression(), easy_ttest(), easy_anova(),
+    easy_chisq(), easy_ztest(), easy_ftest(), easy_correlation(), easy_wilcox(),
+    and easy_kruskal(). Publication-ready 'ggplot2' visualizations are produced
+    by easy_histogram(), easy_boxplot(), easy_scatter(), easy_barplot(),
+    easy_qqplot(), easy_density(), easy_correlation_heatmap(),
+    easy_regression_diagnostics(), and easy_odds_ratio_plot(). The core
+    Narrative Generator Module applies conditional logic to extracted p-values,
+    effect sizes, and model-fit metrics to produce statistically sound,
+    human-readable explanations automatically. Results render in the 'RStudio'
+    Viewer (HTML), the console (ASCII), or export directly to Microsoft Word
+    via 'flextable' and 'officer'.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Language: en-US

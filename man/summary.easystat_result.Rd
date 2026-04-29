@@ -11,6 +11,11 @@
 
 \item{...}{Passed to \code{print.easystat_result}.}
 }
+\value{
+Called for its side effects (printing to the console or RStudio
+  Viewer). Returns \code{object} invisibly via
+  \code{\link{print.easystat_result}}.
+}
 \description{
 Summarize an EasyStat Result Object
 }

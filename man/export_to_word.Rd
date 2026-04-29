@@ -4,12 +4,7 @@
 \alias{export_to_word}
 \title{Export an EasyStat Result to a Formatted Microsoft Word Document}
 \usage{
-export_to_word(
-  result,
-  file = "EasyStat_Report.docx",
-  title = NULL,
-  author = "EasyStat"
-)
+export_to_word(result, file, title = NULL, author = "EasyStat")
 }
 \arguments{
 \item{result}{An object of class \code{"easystat_result"} as returned by
@@ -17,7 +12,8 @@ export_to_word(
 \code{\link{easy_ttest}}, or \code{\link{easy_anova}}.}
 
 \item{file}{Character string. Path to the output \code{.docx} file.
-Defaults to \code{"EasyStat_Report.docx"} in the current working directory.}
+Must be provided by the caller; for example, use
+\code{tempfile(fileext = ".docx")} for a temporary file.}
 
 \item{title}{Character string. Report title printed at the top of the
 document. If \code{NULL} (default) a title is auto-generated from the
@@ -27,8 +23,9 @@ test type.}
 Default \code{"EasyStat"}.}
 }
 \value{
-The \code{file} path invisibly. The \code{.docx} file is written
-  to disk as a side-effect.
+The \code{file} path invisibly (a length-one character vector). The
+  \code{.docx} file is written to the path supplied via \code{file} as a
+  side-effect.
 }
 \description{
 Takes a unified \code{easystat_result} object and writes a fully formatted
@@ -38,7 +35,7 @@ both statistical tables rendered as professional \code{flextable} objects,
 and a footer with metadata. All of this is produced in a single function call.
 }
 \examples{
-\dontrun{
+\donttest{
   result <- easy_regression(mpg ~ wt + hp, data = mtcars)
   export_to_word(result, file = tempfile(fileext = ".docx"),
                 author = "Mr. Mahesh Divakaran")

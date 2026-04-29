@@ -10,18 +10,20 @@
 #'   \code{\link{easy_regression}}, \code{\link{easy_logistic_regression}},
 #'   \code{\link{easy_ttest}}, or \code{\link{easy_anova}}.
 #' @param file Character string. Path to the output \code{.docx} file.
-#'   Defaults to \code{"EasyStat_Report.docx"} in the current working directory.
+#'   Must be provided by the caller; for example, use
+#'   \code{tempfile(fileext = ".docx")} for a temporary file.
 #' @param title Character string. Report title printed at the top of the
 #'   document. If \code{NULL} (default) a title is auto-generated from the
 #'   test type.
 #' @param author Character string. Author name(s) for the report header.
 #'   Default \code{"EasyStat"}.
 #'
-#' @return The \code{file} path invisibly. The \code{.docx} file is written
-#'   to disk as a side-effect.
+#' @return The \code{file} path invisibly (a length-one character vector). The
+#'   \code{.docx} file is written to the path supplied via \code{file} as a
+#'   side-effect.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   result <- easy_regression(mpg ~ wt + hp, data = mtcars)
 #'   export_to_word(result, file = tempfile(fileext = ".docx"),
 #'                 author = "Mr. Mahesh Divakaran")
@@ -29,7 +31,7 @@
 #'
 #' @export
 export_to_word <- function(result,
-                           file   = "EasyStat_Report.docx",
+                           file,
                            title  = NULL,
                            author = "EasyStat") {
 

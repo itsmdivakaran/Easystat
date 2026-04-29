@@ -226,6 +226,9 @@ print.easystat_result <- function(x, viewer = NULL, ...) {
 #' Summarize an EasyStat Result Object
 #' @param object An \code{"easystat_result"} object.
 #' @param ... Passed to \code{print.easystat_result}.
+#' @return Called for its side effects (printing to the console or RStudio
+#'   Viewer). Returns \code{object} invisibly via
+#'   \code{\link{print.easystat_result}}.
 #' @export
 summary.easystat_result <- function(object, ...) {
   print.easystat_result(object, ...)
